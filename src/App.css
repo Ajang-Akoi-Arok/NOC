@@ -1887,6 +1887,15 @@ html {
     margin-bottom: 3rem;
   }
   
+  .stories-intro {
+    text-align: left;
+  }
+  
+  .stories-intro h3,
+  .stories-intro p {
+    text-align: left;
+  }
+  
   .stories-intro h3 {
     font-size: 1.8rem;
   }
@@ -2505,6 +2514,10 @@ html {
   .overview-content-centered {
     max-width: 100%;
     padding: 0 2rem;
+  }
+  
+  .overview-text-centered {
+    text-align: left;
   }
   
   .program-details {
