@@ -296,7 +296,7 @@ const Home = () => {
       </section>
 
       {/* How You Can Help Section */}
-      <section className="help-section">
+      <section id="help-section" className="help-section">
         <div className="container">
           <div className="help-header">
             <h2 className="section-title">How You Can Make a Difference</h2>
@@ -398,7 +398,7 @@ const Home = () => {
       </section>
 
       {/* Success Stories Section */}
-      <section className="stories-section">
+      <section id="stories-section" className="stories-section">
         <div className="container">
           <div className="stories-header">
             <h2 className="section-title">Stories of Hope</h2>
@@ -461,7 +461,7 @@ const Home = () => {
       </section>
 
       {/* Latest News Section */}
-      <section className="news-section">
+      <section id="news-section" className="news-section">
         <div className="container">
           <div className="news-header">
             <h2 className="section-title">Latest News & Updates</h2>
@@ -599,7 +599,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="faq-section">
+      <section id="faq-section" className="faq-section">
         <div className="container">
           <div className="faq-header">
             <h2 className="section-title">Frequently Asked Questions</h2>
