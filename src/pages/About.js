@@ -3,13 +3,10 @@ import { useLocation } from 'react-router-dom';
 
 const About = () => {
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
   const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -58,13 +55,7 @@ const About = () => {
     { name: "Evan Nord", title: "Board Member - Construction Committee", image: "/board/Evan.webp" }
   ];
 
-  if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
+
 
   return (
     <div className="about-page">

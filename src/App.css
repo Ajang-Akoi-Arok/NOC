@@ -133,6 +133,21 @@ html {
   transition: background-image 2s ease-in-out;
 }
 
+.dropdown-menu {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+
+.dropdown-item {
+  color: var(--text-color) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--section-bg) !important;
+  color: #1d96f0 !important;
+}
+
 /* Navbar Styles */
 .navbar {
   background: transparent;
