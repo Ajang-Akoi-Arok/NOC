@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
+import { SITE_URL } from '../config/seo';
 
 const Contact = () => {
   const [loading, setLoading] = useState(true);
@@ -10,7 +12,6 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
@@ -38,6 +39,17 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <SEO
+        title="Contact Us | Nile Orphan Care"
+        description="Get in touch with Nile Orphan Care to ask about our programs, arrange a campus visit in Juba, South Sudan, or explore volunteering and partnership opportunities."
+        path="/contact"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contact Nile Orphan Care',
+          url: `${SITE_URL}/contact`,
+        }}
+      />
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="hero-container">
@@ -231,7 +243,7 @@ const Contact = () => {
               <p><strong>Please contact us at least 48 hours in advance to schedule your visit.</strong></p>
             </div>
             <div className="visit-image">
-              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Visit" />
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Visitors touring a Nile Orphan Care campus in South Sudan" loading="lazy" />
             </div>
           </div>
         </div>

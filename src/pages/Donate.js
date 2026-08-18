@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Donate = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
@@ -19,12 +20,17 @@ const Donate = () => {
 
   return (
     <div className="donate-page">
+      <SEO
+        title="Donate | Support Children in South Sudan"
+        description="Donate to Nile Orphan Care and directly support orphaned and vulnerable children in South Sudan with education, healthcare, nutrition, and shelter."
+        path="/donate"
+      />
       {/* Hero Section */}
       <section className="donate-hero">
         <div className="hero-container">
           <div className="hero-content">
             <h1>Make a Difference Today</h1>
-            <p>Your donation directly impacts the lives of vulnerable children, providing them with education, healthcare, shelter, and hope for a brighter future.</p>
+            <p>Your donation directly impacts the lives of vulnerable children in South Sudan, providing them with education, healthcare, shelter, and hope for a brighter future.</p>
           </div>
         </div>
       </section>
@@ -116,7 +122,7 @@ const Donate = () => {
             </div>
           </div>
           <div className="contact-info">
-            <p>For more information about alternative giving methods, <a href="/contact">contact us</a> or call +211 123 456 789</p>
+            <p>For more information about alternative giving methods, <Link to="/contact">contact us</Link> or call +211 123 456 789</p>
           </div>
         </div>
       </section>
@@ -125,6 +131,7 @@ const Donate = () => {
       <section className="donation-stats">
         <div className="container">
           <h2 className="section-title">Your Donations at Work</h2>
+          <p className="donation-stats-intro">See the <Link to="/programs#impact-stats">full picture of our impact across South Sudan</Link>.</p>
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">92%</div>

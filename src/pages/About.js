@@ -1,28 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { SITE_URL } from '../config/seo';
 
 const About = () => {
   const location = useLocation();
   const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo(0, 0);
-
-    // Handle hash navigation
-    if (location.hash) {
-      setTimeout(() => {
-        const element = document.getElementById(location.hash.substring(1));
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    }
-
     // Add scroll animation observer
     const observerOptions = {
       threshold: 0.1,
@@ -59,12 +44,23 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <SEO
+        title="About Us | Nile Orphan Care's Mission in South Sudan"
+        description="Learn about Nile Orphan Care's mission, founding story, guiding principles, board, and partners supporting orphaned and vulnerable children in South Sudan."
+        path="/about"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: "About Us | Nile Orphan Care's Mission in South Sudan",
+          url: `${SITE_URL}/about`,
+        }}
+      />
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <h1>Our Story</h1>
+            <h1>Our Story: Nile Orphan Care in South Sudan</h1>
             <p>A journey of faith, hope, and transformation in South Sudan</p>
           </div>
         </div>
@@ -110,13 +106,13 @@ const About = () => {
               
               <div className="scripture-quote">
                 <blockquote>
-                  "Do not withhold good from those who deserve it, when it is in your power to act. Do not say to your neighbor, 'Come back later; I'll give it tomorrow'—when you now have it with you."
+                  "Do not withhold good from those who deserve it, when it is in your power to act. Do not say to your neighbor, 'Come back later; I'll give it tomorrow,' when you now have it with you."
                 </blockquote>
                 <cite>Proverbs 3:27-28</cite>
               </div>
             </div>
             <div className="john-image">
-              <img src="/board/John-3.webp" alt="John Deng Ater" />
+              <img src="/board/John-3.webp" alt="Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care" loading="lazy" />
             </div>
           </div>
         </div>
@@ -178,13 +174,13 @@ const About = () => {
         <div className="container">
           <div className="partners-header">
             <h2 className="section-title">Our Partners</h2>
-            <p>Our Partners go above and beyond to bring skills, support and donations to make a difference for everyone at Nile Orphan Care and in doing so they are making a difference to the surrounding community.</p>
+            <p>Our Partners go above and beyond to bring skills, support and donations to make a difference for everyone at Nile Orphan Care and in doing so they are making a difference to the surrounding community. <Link to="/programs">Explore the programs these partnerships make possible</Link>.</p>
           </div>
           
           <div className="partners-grid">
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Discipleship_Global.png" alt="Discipleship Global" />
+                <img src="/images/Discipleship_Global.png" alt="Discipleship Global logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Discipleship Global</h3>
@@ -196,7 +192,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Love_the_Hungry.png" alt="Love the Hungry" />
+                <img src="/images/Love_the_Hungry.png" alt="Love the Hungry logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Love the Hungry</h3>
@@ -208,7 +204,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Sea_Partners.png" alt="Sea Partners" />
+                <img src="/images/Sea_Partners.png" alt="Sea Partners logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Sea Partners</h3>
@@ -220,7 +216,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Partners_in_Compassionate_Care.png" alt="Partners in Compassionate Care" />
+                <img src="/images/Partners_in_Compassionate_Care.png" alt="Partners in Compassionate Care logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Partners in Compassionate Care</h3>
@@ -232,7 +228,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Teach_to_Transform.png" alt="Teach to Transform" />
+                <img src="/images/Teach_to_Transform.png" alt="Teach to Transform logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Teach to Transform</h3>
@@ -244,7 +240,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Northside_Christian_Church.png" alt="Northside Christian Church" />
+                <img src="/images/Northside_Christian_Church.png" alt="Northside Christian Church logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Northside Christian Church</h3>
@@ -256,7 +252,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/SOS.png" alt="SOS" />
+                <img src="/images/SOS.png" alt="SOS logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>SOS</h3>
@@ -268,7 +264,7 @@ const About = () => {
             
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/images/Southeast_Christian_Church.png" alt="Southeast Christian Church" />
+                <img src="/images/Southeast_Christian_Church.png" alt="Southeast Christian Church logo" loading="lazy" />
               </div>
               <div className="partner-content">
                 <h3>Southeast Christian Church</h3>
@@ -291,46 +287,34 @@ const About = () => {
           
           <div className="process-methods-professional">
             <div className="method-item-professional">
-              <div className="method-image">
-                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Assigned Team" />
-              </div>
               <div className="method-content">
                 <div className="method-number">1</div>
                 <h3>The Organization's Assigned Team</h3>
                 <p>This team is responsible to find and invite children into the program</p>
               </div>
             </div>
-            
+
             <div className="method-item-professional">
               <div className="method-content">
                 <div className="method-number">2</div>
                 <h3>Institutions</h3>
                 <p>NOC works in partnership with other institutions to accept children who have undergone background checks with them</p>
               </div>
-              <div className="method-image">
-                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Institutions" />
-              </div>
             </div>
-            
+
             <div className="method-item-professional">
-              <div className="method-image">
-                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Communities" />
-              </div>
               <div className="method-content">
                 <div className="method-number">3</div>
                 <h3>Communities</h3>
                 <p>This method required us to work with leaders from diverse communities whom we believe to know the status of the child/children they are bringing to us. The integrity of these leaders is extremely important under this method.</p>
               </div>
             </div>
-            
+
             <div className="method-item-professional">
               <div className="method-content">
                 <div className="method-number">4</div>
                 <h3>Walk-ins</h3>
                 <p>Under this category, orphaned, street, abandoned and at-risk children who hear about us can find their way to the center; explain their situation and desperately plea for help. With verification purpose, the assigned team for the organization carefully evaluates their lives stories and admits them in the program accordingly.</p>
-              </div>
-              <div className="method-image">
-                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Walk-ins" />
               </div>
             </div>
           </div>
@@ -364,7 +348,7 @@ const About = () => {
             {boardMembers.map((member, index) => (
               <div key={index} className="board-member" onClick={() => setSelectedMember(member)}>
                 <div className="member-photo">
-                  <img src={member.image} alt={member.name} />
+                  <img src={member.image} alt={`${member.name}, ${member.title}`} loading="lazy" />
                 </div>
                 <div className="member-info">
                   <h3>{member.name}</h3>
@@ -383,7 +367,7 @@ const About = () => {
             <button className="modal-close" onClick={() => setSelectedMember(null)}>×</button>
             <div className="modal-body">
               <div className="modal-photo">
-                <img src={selectedMember.image} alt={selectedMember.name} />
+                <img src={selectedMember.image} alt={`${selectedMember.name}, ${selectedMember.title}`} />
               </div>
             </div>
           </div>
