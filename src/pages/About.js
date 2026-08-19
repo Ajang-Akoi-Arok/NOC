@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../config/seo';
+import DonorCTA from '../components/DonorCTA';
 
 const About = () => {
   const location = useLocation();
@@ -359,7 +360,16 @@ const About = () => {
           </div>
         </div>
       </section>
-      
+
+      <DonorCTA
+        heading="What could one opportunity mean to a child?"
+        subheading="It could change everything."
+        body="A meal can help a child grow. Education can open a future. Healthcare can save a life. A safe and caring environment can give a child the confidence to dream again. Together, we can make those opportunities possible."
+        primaryLabel="Give a Child a Chance"
+        secondaryLabel="See Our Impact"
+        secondaryTo="/our-impact"
+      />
+
       {/* Modal */}
       {selectedMember && (
         <div className="modal-overlay" onClick={() => setSelectedMember(null)}>

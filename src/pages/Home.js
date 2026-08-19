@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import DonorCTA from '../components/DonorCTA';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -216,6 +217,74 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Welcome Section */}
+      <section className="welcome-section fade-in">
+        <div className="container">
+          <div className="welcome-header">
+            <h2>Welcome to Nile Orphan Care</h2>
+            <p className="welcome-subtitle">Transforming lives through compassionate care and unwavering commitment</p>
+          </div>
+
+          <div className="welcome-content">
+            <div className="welcome-text">
+              <p>For over a decade, we have been a beacon of hope for orphaned and vulnerable children across the Nile region. Our comprehensive approach ensures every child receives the love, care, and opportunities they deserve.</p>
+              <p>From emergency shelter to long-term development, we walk alongside each child on their journey to independence, providing not just basic needs but the foundation for a bright future.</p>
+
+              <div className="core-values">
+                <div className="value-row">
+                  <div className="value-number">01</div>
+                  <div className="value-content">
+                    <h4>Safe Haven</h4>
+                    <p>Secure homes with loving caregivers who provide stability and emotional support</p>
+                  </div>
+                </div>
+                <div className="value-row">
+                  <div className="value-number">02</div>
+                  <div className="value-content">
+                    <h4>Education First</h4>
+                    <p>Quality learning opportunities that unlock potential and build bright futures</p>
+                  </div>
+                </div>
+                <div className="value-row">
+                  <div className="value-number">03</div>
+                  <div className="value-content">
+                    <h4>Building Futures</h4>
+                    <p>Life skills and vocational training that prepare children for independence</p>
+                  </div>
+                </div>
+                <div className="value-row">
+                  <div className="value-number">04</div>
+                  <div className="value-content">
+                    <h4>Healthcare Support</h4>
+                    <p>Comprehensive medical care ensuring physical and mental wellbeing for all children</p>
+                  </div>
+                </div>
+                <div className="value-row">
+                  <div className="value-number">05</div>
+                  <div className="value-content">
+                    <h4>Community Integration</h4>
+                    <p>Building strong connections with local communities for sustainable support networks</p>
+                  </div>
+                </div>
+                <div className="value-row">
+                  <div className="value-number">06</div>
+                  <div className="value-content">
+                    <h4>Empowerment Programs</h4>
+                    <p>Leadership development and mentorship to help children become confident advocates</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mission-image">
+              <div className="stats-image">
+                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Children learning together at a Nile Orphan Care education program" className="welcome-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The Problem Section */}
       <section className="problem-section fade-in">
         <div className="container">
@@ -225,23 +294,10 @@ const Home = () => {
             <p className="problem-intro">South Sudan's children face conflict, displacement, poverty, food insecurity, and limited access to education and healthcare. Children without parental care are at even greater risk of neglect, exploitation, and being left out of school. An estimated 5 million children were affected by the crisis in 2026.</p>
           </div>
 
-          <div className="impact-glance-list">
-            <div className="impact-glance-item">
-              <span className="impact-glance-number">110,000</span>
-              <p className="impact-glance-label">Children aged 0–17 estimated to have lost one or both parents to AIDS-related causes.</p>
-            </div>
-            <div className="impact-glance-item">
-              <span className="impact-glance-number">5 million</span>
-              <p className="impact-glance-label">Children affected by South Sudan's humanitarian crisis.</p>
-            </div>
-            <div className="impact-glance-item">
-              <span className="impact-glance-number">2.81 million</span>
-              <p className="impact-glance-label">School-aged children out of school (nearly 65% of all school-aged children).</p>
-            </div>
-            <div className="impact-glance-item">
-              <span className="impact-glance-number">2.11 million</span>
-              <p className="impact-glance-label">Children aged 6–59 months at risk of acute malnutrition.</p>
-            </div>
+          <div className="problem-stat-card">
+            <p>
+              An estimated <strong>110,000</strong> children aged 0–17 have lost one or both parents to AIDS-related causes. Today, <strong>5 million</strong> children are affected by South Sudan's humanitarian crisis. Of these, <strong>2.81 million</strong> school-aged children are out of school, nearly 65% of all school-aged children, and <strong>2.11 million</strong> children aged 6–59 months are at risk of acute malnutrition.
+            </p>
           </div>
         </div>
       </section>
@@ -315,7 +371,7 @@ const Home = () => {
           </div>
 
           <div className="whatwedo-cta">
-            <Link to="/programs" className="cta-btn primary">See All Our Programs</Link>
+            <Link to="/programs" className="cta-btn primary programs-cta-btn">See All Our Programs</Link>
           </div>
         </div>
       </section>
@@ -349,7 +405,7 @@ const Home = () => {
           </div>
 
           <div className="whatwedo-cta">
-            <Link to="/programs#impact-stats" className="cta-btn primary">See Our Full Impact</Link>
+            <Link to="/our-impact" className="cta-btn primary">See Our Full Impact</Link>
           </div>
         </div>
       </section>
@@ -411,92 +467,6 @@ const Home = () => {
                 <span>Our goal is simple: to raise children who are not only supported, but empowered.</span>
                 <span>Our goal is simple: to raise children who are not only supported, but empowered.</span>
                 <span>Our goal is simple: to raise children who are not only supported, but empowered.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Welcome Section */}
-      <section className="welcome-section fade-in">
-        <div className="container">
-          <div className="welcome-header">
-            <h2>Welcome to Nile Orphan Care</h2>
-            <p className="welcome-subtitle">Transforming lives through compassionate care and unwavering commitment</p>
-          </div>
-          
-          <div className="welcome-content">
-            <div className="welcome-text">
-              <p>For over a decade, we have been a beacon of hope for orphaned and vulnerable children across the Nile region. Our comprehensive approach ensures every child receives the love, care, and opportunities they deserve.</p>
-              <p>From emergency shelter to long-term development, we walk alongside each child on their journey to independence, providing not just basic needs but the foundation for a bright future.</p>
-              
-              <div className="core-values">
-                <div className="value-row">
-                  <div className="value-number">01</div>
-                  <div className="value-content">
-                    <h4>Safe Haven</h4>
-                    <p>Secure homes with loving caregivers who provide stability and emotional support</p>
-                  </div>
-                </div>
-                <div className="value-row">
-                  <div className="value-number">02</div>
-                  <div className="value-content">
-                    <h4>Education First</h4>
-                    <p>Quality learning opportunities that unlock potential and build bright futures</p>
-                  </div>
-                </div>
-                <div className="value-row">
-                  <div className="value-number">03</div>
-                  <div className="value-content">
-                    <h4>Building Futures</h4>
-                    <p>Life skills and vocational training that prepare children for independence</p>
-                  </div>
-                </div>
-                <div className="value-row">
-                  <div className="value-number">04</div>
-                  <div className="value-content">
-                    <h4>Healthcare Support</h4>
-                    <p>Comprehensive medical care ensuring physical and mental wellbeing for all children</p>
-                  </div>
-                </div>
-                <div className="value-row">
-                  <div className="value-number">05</div>
-                  <div className="value-content">
-                    <h4>Community Integration</h4>
-                    <p>Building strong connections with local communities for sustainable support networks</p>
-                  </div>
-                </div>
-                <div className="value-row">
-                  <div className="value-number">06</div>
-                  <div className="value-content">
-                    <h4>Empowerment Programs</h4>
-                    <p>Leadership development and mentorship to help children become confident advocates</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mission-image">
-              <div className="stats-image">
-                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Children learning together at a Nile Orphan Care education program" className="welcome-img" loading="lazy" />
-              </div>
-              <div className="impact-numbers">
-                <div className="impact-item">
-                  <span className="impact-number">1,200+</span>
-                  <span className="impact-label">Children Served</span>
-                </div>
-                <div className="impact-item">
-                  <span className="impact-number">8</span>
-                  <span className="impact-label">Care Centers</span>
-                </div>
-                <div className="impact-item">
-                  <span className="impact-number">150+</span>
-                  <span className="impact-label">Success Stories</span>
-                </div>
-                <div className="impact-item">
-                  <span className="impact-number">15+</span>
-                  <span className="impact-label">Years of Service</span>
-                </div>
               </div>
             </div>
           </div>
@@ -702,6 +672,14 @@ const Home = () => {
         </div>
       </section>
 
+      <DonorCTA
+        heading="Care about the future of South Sudan's children? So do we."
+        subheading="Help turn care into opportunity."
+        body="Every child deserves the chance to grow up safe, healthy, educated, and hopeful. Your support helps Nile Orphan Care give vulnerable children the foundation they need to build a better future."
+        primaryLabel="Donate Today"
+        secondaryLabel="Partner With Us"
+        secondaryTo="/contact"
+      />
     </div>
   );
 };

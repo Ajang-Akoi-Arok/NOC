@@ -10,6 +10,7 @@ import Programs from './pages/Programs';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
 import GetInvolved from './pages/GetInvolved';
+import OurImpact from './pages/OurImpact';
 import Footer from './components/Footer';
 import organizationSchema from './config/organizationSchema';
 import './App.css';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/our-impact" element={<OurImpact />} />
           </Routes>
           <Footer />
         </div>

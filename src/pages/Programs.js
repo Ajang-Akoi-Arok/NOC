@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import DonorCTA from '../components/DonorCTA';
 
 const Programs = () => {
   const [loading, setLoading] = useState(true);
@@ -278,31 +279,6 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* Impact Statistics */}
-      <section id="impact-stats" className="impact-stats">
-        <div className="container">
-          <h2 className="section-title">Our Impact in Numbers</h2>
-          <div className="program-stats-grid">
-            <div className="program-stat-card">
-              <div className="stat-number">620</div>
-              <div className="stat-label">Children fed daily through our nutrition programs.</div>
-            </div>
-            <div className="program-stat-card">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Medical coverage available to children in our care.</div>
-            </div>
-            <div className="program-stat-card">
-              <div className="stat-number">63</div>
-              <div className="stat-label">Tribes united across our programs and communities.</div>
-            </div>
-            <div className="program-stat-card">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Clean water access for every child we support.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Initiatives Section */}
       <section className="initiatives-section">
         <div className="container">
@@ -380,6 +356,15 @@ const Programs = () => {
           </div>
         </div>
       </section>
+
+      <DonorCTA
+        heading="South Sudan's future is growing up right now."
+        subheading="Will you help shape it?"
+        body="Every child we educate, nourish, protect, and empower has the potential to become a teacher, entrepreneur, healthcare professional, leader, or changemaker in their community. Supporting a child today is an investment in South Sudan's tomorrow."
+        primaryLabel="Invest in Their Future"
+        secondaryLabel="Explore Partnership Opportunities"
+        secondaryTo="/contact"
+      />
     </div>
   );
 };

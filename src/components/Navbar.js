@@ -77,6 +77,7 @@ const Navbar = () => {
             <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
             <li><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About Us</Link></li>
             <li><Link to="/programs" className={`nav-link ${location.pathname === '/programs' ? 'active' : ''}`}>Our Programs</Link></li>
+            <li><Link to="/our-impact" className={`nav-link ${location.pathname === '/our-impact' ? 'active' : ''}`}>Our Impact</Link></li>
             <li><Link to="/get-involved" className={`nav-link ${location.pathname === '/get-involved' ? 'active' : ''}`}>Get Involved</Link></li>
             <li><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link></li>
           </ul>
@@ -92,6 +93,7 @@ const Navbar = () => {
             <Link to="/" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             <Link to="/about" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
             <Link to="/programs" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Our Programs</Link>
+            <Link to="/our-impact" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Our Impact</Link>
             <Link to="/get-involved" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Get Involved</Link>
             <Link to="/contact" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             <Link to="/donate" className="mobile-nav-donate-btn" onClick={() => setIsMobileMenuOpen(false)}>
