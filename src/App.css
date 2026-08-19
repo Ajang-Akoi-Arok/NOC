@@ -1454,8 +1454,9 @@ html {
 }
 .success-story-photo {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
   margin-bottom: 1.5rem;
 }
@@ -1478,6 +1479,52 @@ html {
 .success-story-author span {
   color: #888;
   font-size: 0.85rem;
+}
+.child-story-card {
+  display: flex;
+  flex-direction: column;
+}
+.child-story-card .success-story-author {
+  margin-bottom: 1rem;
+}
+.child-story-placeholder {
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.child-story-placeholder span {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #adb5bd;
+}
+.child-story-text {
+  color: #555;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+  flex-grow: 1;
+}
+.child-story-paragraph {
+  display: block;
+  margin-bottom: 1rem;
+}
+.child-story-paragraph:last-child {
+  margin-bottom: 0;
+}
+.child-story-toggle {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  color: #0d3b66;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+.child-story-toggle:hover {
+  color: #d97706;
 }
 /* Why We Exist Section */
 .why-exist-section {
