@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
+import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const GetInvolved = () => {
   const [loading, setLoading] = useState(true);
@@ -28,8 +29,8 @@ const GetInvolved = () => {
       <section className="contact-hero">
         <div className="hero-container">
           <div className="hero-content">
-            <h1>Get Involved</h1>
-            <p>Your support creates lasting change in the lives of vulnerable children. Choose the way that works best for you to join our mission of hope and transformation.</p>
+            <AnimatedHeroText as="h1" text="Get Involved" startDelay={0.15} />
+            <AnimatedHeroText as="p" text="Choose your way to change a child's story." startDelay={0.5} />
           </div>
         </div>
       </section>

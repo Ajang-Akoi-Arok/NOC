@@ -48,7 +48,7 @@ img {
   height: auto;
 }
 body {
-  font-family: 'Montserrat', 'Avenir Next', 'Avenir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Avenir Next', 'Avenir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.6;
@@ -60,8 +60,9 @@ p {
   line-height: 1.8;
   color: #333;
 }
-h1, h2, h3, h4, h5, h6,
-.section-title,
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Avenir Next', 'Avenir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .logo-text {
   font-family: 'Lora', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 }
@@ -256,8 +257,8 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #E94B3C;
-  color: white;
+  background: #FFC107;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -267,7 +268,7 @@ html {
   transition: background 0.3s ease;
 }
 .nav-donate-btn:hover {
-  background: #d13c2d;
+  background: #e0a800;
 }
 .nav-donate-heart {
   line-height: 1;
@@ -276,8 +277,8 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: #E94B3C;
-  color: white;
+  background: #FFC107;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -289,7 +290,7 @@ html {
   transition: background 0.3s ease;
 }
 .mobile-top-donate-btn:hover {
-  background: #d13c2d;
+  background: #e0a800;
 }
 .mobile-nav-donate-btn {
   display: flex;
@@ -298,8 +299,8 @@ html {
   gap: 6px;
   margin: 0.5rem 2rem 0;
   padding: 0.9rem 1rem;
-  background: #E94B3C;
-  color: white;
+  background: #FFC107;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -343,18 +344,32 @@ html {
   position: relative;
 }
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.875rem;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
+  line-height: 1.32;
+}
+.hero-word {
+  display: inline-block;
+  color: #fff;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(28px);
+  animation: heroWordIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  margin-right: 0.28em;
+}
+@keyframes heroWordIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .hero-donate-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #E94B3C;
-  color: white;
+  background: #FFC107;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -363,8 +378,11 @@ html {
   border-radius: 30px;
   transition: background 0.3s ease, transform 0.2s ease;
 }
+.hero-donate-btn.hero-word {
+  transform: translateY(16px);
+}
 .hero-donate-btn:hover {
-  background: #d13c2d;
+  background: #e0a800;
   transform: translateY(-2px);
 }
 .hero p {
@@ -445,7 +463,9 @@ html {
 }
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.875rem;
+  font-weight: 500;
+  line-height: 1.32;
   color: #333;
   margin-bottom: 3rem;
 }
@@ -807,7 +827,7 @@ html {
 /* Welcome Section */
 .welcome-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #fff;
 }
 .welcome-header {
   text-align: center;
@@ -829,8 +849,14 @@ html {
 .welcome-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "text photo"
+    "values photo";
   gap: 5rem;
   align-items: start;
+}
+.welcome-text {
+  grid-area: text;
 }
 .welcome-text p {
   font-size: 1.1rem;
@@ -839,27 +865,37 @@ html {
   margin-bottom: 1.5rem;
 }
 .core-values {
+  grid-area: values;
   margin-top: 3rem;
+}
+.mission-image {
+  grid-area: photo;
 }
 .value-row {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #1d96f0;
+  margin-bottom: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid #eef0f2;
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.value-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+  border-color: #cfe6fb;
 }
 .value-row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .value-number {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #1d96f0;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #1d96f0;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #1d96f0, #0d6efd);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1010,13 +1046,13 @@ html {
   font-size: 0.9rem;
 }
 .help-cta.primary {
-  background: #E94B3C;
-  color: white;
+  background: #FFC107;
+  color: #1a1a1a;
 }
 .help-cta.primary:hover {
-  background: #d13c2d;
+  background: #e0a800;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
 }
 .help-cta.secondary {
   background: transparent;
@@ -1121,7 +1157,7 @@ html {
 .stories-track {
   display: flex;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  width: calc(9 * 380px);
+  width: calc(10 * 380px);
 }
 .story-card {
   flex: 0 0 360px;
@@ -1151,7 +1187,7 @@ html {
 .story-card .story-image img {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 0;
   object-fit: cover;
   border: 3px solid white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1167,12 +1203,6 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-.quote-mark {
-  color: #1d96f0;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: center;
 }
 .story-content blockquote {
   font-size: 15px;
@@ -1199,6 +1229,17 @@ html {
   color: #666;
   font-size: 14px;
   font-weight: 500;
+}
+.story-read-link {
+  display: block;
+  margin-top: 10px;
+  color: #1d96f0;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.story-read-link:hover {
+  text-decoration: underline;
 }
 .stories-navigation {
   display: flex;
@@ -1793,11 +1834,11 @@ html {
   margin: 0 auto;
 }
 .programs-hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.875rem;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  line-height: 1.2;
+  line-height: 1.32;
 }
 .programs-hero p {
   font-size: 1.2rem;
@@ -1879,7 +1920,7 @@ html {
   overflow: hidden;
 }
 .program-card.featured {
-  border: 2px solid #1d96f0;
+  border: 1px solid #e9ecef;
 }
 .program-photo {
   width: 100%;
@@ -1903,8 +1944,8 @@ html {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #1d96f0, #0d6efd);
-  border-radius: 50%;
+  background: #333;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1929,17 +1970,13 @@ html {
 .program-tag {
   padding: 0.4rem 1rem;
   font-size: 0.8rem;
-  border-radius: 20px;
+  border-radius: 0;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  background: #f1f3f5;
+  color: #333;
 }
-.program-tag.nutrition { background: #e8f5e8; color: #2e7d32; }
-.program-tag.medical { background: #fff3e0; color: #f57c00; }
-.program-tag.spiritual { background: #f3e5f5; color: #7b1fa2; }
-.program-tag.education { background: #e3f2fd; color: #1976d2; }
-.program-tag.vocational { background: #fff8e1; color: #f9a825; }
-.program-tag.agriculture { background: #e8f5e8; color: #388e3c; }
 .program-description {
   color: #555;
   line-height: 1.7;
@@ -1980,9 +2017,63 @@ html {
   content: '✓';
   position: absolute;
   left: 0;
-  color: #1d96f0;
+  color: #333;
   font-weight: bold;
   font-size: 1.1rem;
+}
+/* Program Spotlight Section */
+.spotlight-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+.spotlight-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+.spotlight-block + .spotlight-block {
+  margin-top: 6rem;
+}
+.spotlight-block.reverse .spotlight-image {
+  order: 2;
+}
+.spotlight-block.reverse .spotlight-text {
+  order: 1;
+}
+.spotlight-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.spotlight-text h3 {
+  font-size: 2.2rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.25;
+}
+.spotlight-text p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.spotlight-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.spotlight-stat {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-left: 3px solid #333;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
 }
 /* Donor Call-to-Action Banner */
 .donor-cta-section {
@@ -2003,11 +2094,10 @@ html {
   margin-bottom: 1rem;
 }
 .donor-cta-heading {
-  font-family: 'Lora', 'Libre Baskerville', Georgia, serif;
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-size: 2.875rem;
+  font-weight: 500;
   color: #111;
-  line-height: 1.25;
+  line-height: 1.32;
   margin: 0;
 }
 .donor-cta-body {
@@ -2031,8 +2121,8 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #E94B3C;
-  color: #fff;
+  background: #FFC107;
+  color: #1a1a1a;
   padding: 16px 36px;
   font-size: 1rem;
 }
@@ -2040,7 +2130,7 @@ html {
   line-height: 1;
 }
 .donor-cta-btn.primary:hover {
-  background: #d13c2d;
+  background: #e0a800;
 }
 .donor-cta-btn.secondary {
   color: #111;
@@ -2188,11 +2278,11 @@ html {
   margin: 0 auto;
 }
 .contact-hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.875rem;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  line-height: 1.2;
+  line-height: 1.32;
 }
 .contact-hero p {
   font-size: 1.2rem;
@@ -2406,9 +2496,10 @@ html {
   padding-top: 112px;
 }
 .about-hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.875rem;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 500;
+  line-height: 1.32;
 }
 .about-hero p {
   font-size: 1.3rem;
@@ -2536,6 +2627,61 @@ html {
 .board-section {
   padding: 80px 0;
   background: #f8f9fa;
+}
+.report-section {
+  padding: 80px 0;
+  background: #fff;
+}
+.report-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.report-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 1.25rem 0 2rem;
+}
+.stories-of-hope-subtitle {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0.5rem 0 1.5rem;
+}
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.report-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+}
+.report-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.report-card-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+.report-card-body h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+.report-link {
+  color: #1d96f0;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.report-link:hover {
+  text-decoration: underline;
 }
 .board-header {
   text-align: center;
@@ -2892,11 +3038,10 @@ html {
   align-items: center;
 }
 .donate-intro-text h1 {
-  font-family: 'Lora', 'Libre Baskerville', Georgia, serif;
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-size: 2.875rem;
+  font-weight: 500;
   color: #111;
-  line-height: 1.25;
+  line-height: 1.32;
   margin-bottom: 1.25rem;
 }
 .donate-intro-text p {
@@ -2975,8 +3120,8 @@ html {
 .donate-now-btn {
   display: inline-block;
   padding: 20px 40px;
-  background: #E94B3C;
-  color: white;
+  background: #FFC107;
+  color: #1a1a1a;
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: 700;
@@ -2986,7 +3131,7 @@ html {
   letter-spacing: 1px;
 }
 .donate-now-btn:hover {
-  background: #d13c2d;
+  background: #e0a800;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -3032,40 +3177,26 @@ html {
 /* Donation Statistics */
 .donation-stats {
   padding: 120px 0;
-  background: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
-  color: white;
+  background: #f8f9fa;
+  color: #333;
   text-align: center;
   position: relative;
-  overflow: hidden;
-}
-.donation-stats::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-.donation-stats .container {
-  position: relative;
-  z-index: 2;
 }
 .donation-stats-intro {
   margin-top: -40px;
   margin-bottom: 40px;
   font-size: 1.1rem;
+  color: #555;
 }
 .donation-stats-intro a {
-  color: #7fc4f5;
+  color: #1d96f0;
 }
 .donation-stats .section-title {
-  color: white;
+  color: #333;
   margin-bottom: 60px;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 2.875rem;
+  font-weight: 500;
+  line-height: 1.32;
 }
 .stats-grid {
   display: grid;
@@ -3076,28 +3207,28 @@ html {
   min-width: 0;
   text-align: center;
   padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #fff;
+  border: 1px solid #e9ecef;
   border-radius: 0;
   transition: all 0.3s ease;
 }
 .stat-item:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 15px;
-  color: white;
+  color: #1d96f0;
   display: block;
   line-height: 1;
 }
 .stat-label {
   font-size: 1.1rem;
   font-weight: 600;
-  opacity: 0.95;
   line-height: 1.4;
-  color: white;
+  color: #333;
 }
 /* Mobile Responsiveness */
 /* FAQ Section */
@@ -3478,9 +3609,17 @@ html {
   
   .welcome-content {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "photo"
+      "values";
     gap: 3rem;
   }
-  
+
+  .core-values {
+    margin-top: 0;
+  }
+
   .value-row {
     flex-direction: column;
     text-align: center;
@@ -3715,6 +3854,32 @@ html {
 
   .program-body {
     padding: 2rem;
+  }
+
+  .spotlight-section {
+    padding: 60px 0;
+  }
+
+  .spotlight-block {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .spotlight-block.reverse .spotlight-image,
+  .spotlight-block.reverse .spotlight-text {
+    order: initial;
+  }
+
+  .spotlight-block + .spotlight-block {
+    margin-top: 3rem;
+  }
+
+  .spotlight-image img {
+    height: 260px;
+  }
+
+  .spotlight-text h3 {
+    font-size: 1.7rem;
   }
   
   .program-stats-grid {
@@ -3966,6 +4131,15 @@ html {
   
   .faq-answer p {
     padding: 0 20px 20px;
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stories-of-hope-subtitle {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 576px) {

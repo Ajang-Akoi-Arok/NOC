@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
+import AnimatedHeroText from '../components/AnimatedHeroText';
 import { SITE_URL } from '../config/seo';
 
 const Contact = () => {
@@ -54,8 +55,8 @@ const Contact = () => {
       <section className="contact-hero">
         <div className="hero-container">
           <div className="hero-content">
-            <h1>Get in Touch</h1>
-            <p>We'd love to hear from you. Whether you're interested in supporting our mission, learning more about our programs, or exploring partnership opportunities, we're here to connect.</p>
+            <AnimatedHeroText as="h1" text="Get in Touch" startDelay={0.15} />
+            <AnimatedHeroText as="p" text="We'd love to hear from you." startDelay={0.45} />
           </div>
         </div>
       </section>

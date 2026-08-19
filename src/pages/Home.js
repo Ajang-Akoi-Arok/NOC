@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import DonorCTA from '../components/DonorCTA';
+import AnimatedHeroText from '../components/AnimatedHeroText';
+import { childStories } from '../data/childStories';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -119,64 +121,7 @@ const Home = () => {
     return () => observer.disconnect();
   }, [loading]);
 
-  const testimonials = [
-    {
-      quote: "Nile Orphan Care didn't just give me shelter - they gave me a family, an education, and most importantly, they believed in me when I couldn't believe in myself. Today, I'm a registered nurse helping others, just like they helped me.",
-      name: "Sarah M.",
-      title: "Registered Nurse, Class of 2019",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "When I arrived at NOC, I was 8 years old and had lost everything. The staff became my family, and education became my hope. Now I'm an engineer, building bridges - literally and figuratively - for my community.",
-      name: "Michael K.",
-      title: "Civil Engineer, Class of 2017",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "The life skills program at NOC taught me more than just academics. I learned leadership, responsibility, and how to dream big. Today, I run my own business and employ 12 people from my community.",
-      name: "Grace A.",
-      title: "Entrepreneur, Class of 2018",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "NOC gave me more than education - they gave me confidence. The mentorship program helped me discover my passion for teaching. Now I'm back, inspiring the next generation just like my teachers inspired me.",
-      name: "David L.",
-      title: "Teacher & Mentor, Class of 2016",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "The healthcare program at NOC saved my life and showed me my calling. Today, I'm a doctor serving rural communities, bringing hope and healing to places that need it most.",
-      name: "Amara T.",
-      title: "Medical Doctor, Class of 2015",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "From a scared child to a confident leader - NOC's empowerment programs taught me that my voice matters. Now I advocate for children's rights at the national level.",
-      name: "James R.",
-      title: "Child Rights Advocate, Class of 2014",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "NOC's vocational training program gave me practical skills and confidence. Today I run a successful carpentry workshop and train other young people in my community.",
-      name: "Peter K.",
-      title: "Master Craftsman, Class of 2020",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "The counseling and support I received at NOC helped me heal from trauma and discover my passion for helping others. Now I'm a social worker making a difference.",
-      name: "Ruth M.",
-      title: "Social Worker, Class of 2019",
-      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      quote: "NOC believed in my potential when no one else did. Their scholarship program enabled me to study law. Today I fight for justice and represent the voiceless.",
-      name: "Samuel T.",
-      title: "Human Rights Lawyer, Class of 2013",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    }
-  ];
-
-  const maxSlides = testimonials.length - 2;
+  const maxSlides = childStories.length - 2;
   
   const nextTestimonial = () => {
     if (currentTestimonial < maxSlides) {
@@ -209,8 +154,8 @@ const Home = () => {
       <section className="hero" style={{backgroundImage: `url(${heroImages[currentHeroImage]})`}}>
         <div className="hero-container">
           <div className="hero-content">
-            <h1>Transforming Lives of Vulnerable Children in South Sudan</h1>
-            <Link to="/donate" className="hero-donate-btn">
+            <AnimatedHeroText as="h1" text="Transforming Lives of Vulnerable Children in South Sudan" startDelay={0.35} />
+            <Link to="/donate" className="hero-donate-btn hero-word" style={{animationDelay: '1.55s'}}>
               <span className="nav-donate-heart">♥</span> Donate Now
             </Link>
           </div>
@@ -227,58 +172,58 @@ const Home = () => {
 
           <div className="welcome-content">
             <div className="welcome-text">
-              <p>For over a decade, we have been a beacon of hope for orphaned and vulnerable children across the Nile region. Our comprehensive approach ensures every child receives the love, care, and opportunities they deserve.</p>
+              <p>For over a decade, we have been a beacon of hope for orphaned and vulnerable children in South Sudan. Our comprehensive approach ensures every child receives the love, care, and opportunities they deserve.</p>
               <p>From emergency shelter to long-term development, we walk alongside each child on their journey to independence, providing not just basic needs but the foundation for a bright future.</p>
+            </div>
 
-              <div className="core-values">
-                <div className="value-row">
-                  <div className="value-number">01</div>
-                  <div className="value-content">
-                    <h4>Safe Haven</h4>
-                    <p>Secure homes with loving caregivers who provide stability and emotional support</p>
-                  </div>
+            <div className="core-values">
+              <div className="value-row">
+                <div className="value-number">01</div>
+                <div className="value-content">
+                  <h4>Safe Haven</h4>
+                  <p>Secure homes with loving caregivers who provide stability and emotional support</p>
                 </div>
-                <div className="value-row">
-                  <div className="value-number">02</div>
-                  <div className="value-content">
-                    <h4>Education First</h4>
-                    <p>Quality learning opportunities that unlock potential and build bright futures</p>
-                  </div>
+              </div>
+              <div className="value-row">
+                <div className="value-number">02</div>
+                <div className="value-content">
+                  <h4>Education First</h4>
+                  <p>Quality learning opportunities that unlock potential and build bright futures</p>
                 </div>
-                <div className="value-row">
-                  <div className="value-number">03</div>
-                  <div className="value-content">
-                    <h4>Building Futures</h4>
-                    <p>Life skills and vocational training that prepare children for independence</p>
-                  </div>
+              </div>
+              <div className="value-row">
+                <div className="value-number">03</div>
+                <div className="value-content">
+                  <h4>Building Futures</h4>
+                  <p>Life skills and vocational training that prepare children for independence</p>
                 </div>
-                <div className="value-row">
-                  <div className="value-number">04</div>
-                  <div className="value-content">
-                    <h4>Healthcare Support</h4>
-                    <p>Comprehensive medical care ensuring physical and mental wellbeing for all children</p>
-                  </div>
+              </div>
+              <div className="value-row">
+                <div className="value-number">04</div>
+                <div className="value-content">
+                  <h4>Healthcare Support</h4>
+                  <p>Comprehensive medical care ensuring physical and mental wellbeing for all children</p>
                 </div>
-                <div className="value-row">
-                  <div className="value-number">05</div>
-                  <div className="value-content">
-                    <h4>Community Integration</h4>
-                    <p>Building strong connections with local communities for sustainable support networks</p>
-                  </div>
+              </div>
+              <div className="value-row">
+                <div className="value-number">05</div>
+                <div className="value-content">
+                  <h4>Community Integration</h4>
+                  <p>Building strong connections with local communities for sustainable support networks</p>
                 </div>
-                <div className="value-row">
-                  <div className="value-number">06</div>
-                  <div className="value-content">
-                    <h4>Empowerment Programs</h4>
-                    <p>Leadership development and mentorship to help children become confident advocates</p>
-                  </div>
+              </div>
+              <div className="value-row">
+                <div className="value-number">06</div>
+                <div className="value-content">
+                  <h4>Empowerment Programs</h4>
+                  <p>Leadership development and mentorship to help children become confident advocates</p>
                 </div>
               </div>
             </div>
 
             <div className="mission-image">
               <div className="stats-image">
-                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Children learning together at a Nile Orphan Care education program" className="welcome-img" loading="lazy" />
+                <img src="/images/welcome-to-noc.jpeg" alt="Children waving and smiling at a Nile Orphan Care community program" className="welcome-img" loading="lazy" />
               </div>
             </div>
           </div>
@@ -482,29 +427,25 @@ const Home = () => {
             <div className="stories-intro">
               <h3>Transforming Lives Through Resilience and Hope</h3>
               <p>Each child who enters our care carries a story of courage and potential. While their journeys begin with challenges, some arriving with nothing but hope, others carrying dreams that transcend their circumstances, they all share one powerful truth: transformation is possible when compassion meets opportunity.</p>
-              <p>Today, our alumni stand as living proof of this transformation. They serve as educators, healthcare professionals, engineers, and community leaders across the region. More importantly, they return as mentors and change-makers, demonstrating that with dedicated support and unwavering belief, every child can rewrite their story and create an extraordinary legacy.</p>
+              <p>Meet a few of the children who've found refuge, safety, and a fresh start with Nile Orphan Care. Each one arrived carrying a different story of loss, and each one is now writing a new chapter, one school day, one meal, and one caring adult at a time.</p>
             </div>
           </div>
-          
+
           <div className="stories-carousel">
             <div className="stories-track" style={{transform: window.innerWidth <= 768 ? `translateX(-${currentTestimonial * 340}px)` : `translateX(-${currentTestimonial * 380}px)`}}>
-              {testimonials.map((testimonial, index) => (
+              {childStories.map((story, index) => (
                 <div key={index} className="story-card">
                   <div className="story-image">
-                    <img src={testimonial.image} alt={testimonial.name} loading="lazy" />
+                    <img src={story.image} alt={story.name} loading="lazy" />
                     <div className="story-overlay"></div>
                   </div>
                   <div className="story-content">
-                    <div className="quote-mark">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" fill="currentColor"/>
-                      </svg>
-                    </div>
-                    <blockquote>{testimonial.quote}</blockquote>
+                    <blockquote>{story.excerpt}</blockquote>
                     <div className="story-author">
-                      <strong>{testimonial.name}</strong>
-                      <span>{testimonial.title}</span>
+                      <strong>{story.name}</strong>
+                      <span>{story.subtitle}</span>
                     </div>
+                    <Link to="/our-impact#stories" className="story-read-link">Read {story.name.split(' ')[0]}'s story &rarr;</Link>
                   </div>
                 </div>
               ))}
@@ -673,7 +614,7 @@ const Home = () => {
       </section>
 
       <DonorCTA
-        heading="Care about the future of South Sudan's children? So do we."
+        heading="We care about the future of South Sudan's children. So can you."
         subheading="Help turn care into opportunity."
         body="Every child deserves the chance to grow up safe, healthy, educated, and hopeful. Your support helps Nile Orphan Care give vulnerable children the foundation they need to build a better future."
         primaryLabel="Donate Today"

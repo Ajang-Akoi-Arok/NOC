@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import DonorCTA from '../components/DonorCTA';
+import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const Programs = () => {
   const [loading, setLoading] = useState(true);
@@ -30,8 +31,8 @@ const Programs = () => {
       <section className="programs-hero">
         <div className="hero-container">
           <div className="hero-content">
-            <h1>Our Programs & Initiatives for Children in South Sudan</h1>
-            <p>Like children of parents, these programs are offspring that further develop the vision of Nile Orphan Care. Each child in our care receives these expressions of love through comprehensive support systems that nurture every aspect of their development.</p>
+            <AnimatedHeroText as="h1" text="Our Programs & Initiatives" startDelay={0.15} />
+            <AnimatedHeroText as="p" text="Comprehensive support that nurtures every child's growth." startDelay={0.55} />
           </div>
         </div>
       </section>
@@ -58,8 +59,85 @@ const Programs = () => {
           </div>
 
           <div className="programs-grid">
-            {/* Nutrition Program */}
+            {/* Education */}
             <div className="program-card featured">
+              <div className="program-photo">
+                <img src="/images/Education.jpeg" alt="Children from many South Sudanese tribes learning together at the Inter-Ethnic Academy" loading="lazy" />
+              </div>
+              <div className="program-body">
+                <div className="program-header">
+                  <div className="program-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3>Inter-Ethnic Academy</h3>
+                    <span className="program-tag education">Primary & Secondary Education</span>
+                  </div>
+                </div>
+                <p className="program-description">Addressing South Sudan's tribal divisions through education. With 63 of the 64 tribes represented in our student body, we demonstrate that unity is possible through shared learning and the Gospel's unifying power.</p>
+                <div className="program-details">
+                  <div className="detail-section">
+                    <h4>Unity Through Education</h4>
+                    <p>South Sudan's 64 unique tribes are both a source of beauty and division. Our academy was specifically named to address tribal conflicts by showing that education and faith can unite what politics divides. Children who might otherwise never sit in the same room grow up sharing classrooms, meals, and friendships instead.</p>
+                    <p>Every lesson is taught alongside our SLOSS peace curriculum, so reconciliation isn't a one-off workshop, it's woven into how children learn, argue, and make up every single day.</p>
+                  </div>
+                  <div className="program-impacts">
+                    <h4>Key Features</h4>
+                    <ul>
+                      <li><strong>Inter-tribal unity:</strong> 63 of 64 tribes learning together, breaking down barriers</li>
+                      <li><strong>Quality education:</strong> Free, comprehensive primary and secondary education for all children in our care</li>
+                      <li><strong>Peace curriculum:</strong> Integrated peace education promoting reconciliation and understanding</li>
+                      <li><strong>Long-term pathway:</strong> Feeds directly into our vocational training and scholarship opportunities</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Agriculture */}
+            <div className="program-card featured">
+              <div className="program-photo">
+                <img src="https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
+              </div>
+              <div className="program-body">
+                <div className="program-header">
+                  <div className="program-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 2a3 3 0 0 0-3 3c0 1.5 1.5 3 3 3s3-1.5 3-3a3 3 0 0 0-3-3z"/>
+                      <path d="M19 13v-2a7 7 0 0 0-14 0v2"/>
+                      <path d="M12 22s8-4 8-10V6l-8-2-8 2v6c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3>Daalbaai Agriculture</h3>
+                    <span className="program-tag agriculture">Sustainable Farming</span>
+                  </div>
+                </div>
+                <p className="program-description">"Happiness is a result of availability of food" - This program promotes indigenous food production, utilizing South Sudan's fertile land and abundant rainfall to reduce dependency on international aid.</p>
+                <div className="program-details">
+                  <div className="detail-section">
+                    <h4>Food Independence Vision</h4>
+                    <p>The fertility of our land, combined with plenty of rain, convinces us that South Sudan can become one of the world's breadbasket countries - "a land flowing with milk and honey."</p>
+                    <p>Daalbaai works hand in hand with Love the Hungry: what's grown here goes straight into the daily meals that feed the children in our care, turning cultivated fields into food on the table.</p>
+                  </div>
+                  <div className="program-impacts">
+                    <h4>Mission Goals</h4>
+                    <ul>
+                      <li><strong>Indigenous production:</strong> Developing local agricultural capacity and knowledge</li>
+                      <li><strong>Aid independence:</strong> Reducing reliance on international humanitarian assistance</li>
+                      <li><strong>Land utilization:</strong> Maximizing South Sudan's natural agricultural advantages</li>
+                      <li><strong>Skills transfer:</strong> Teaching children and staff sustainable farming techniques they can carry forward</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Nutrition Program */}
+            <div className="program-card">
               <div className="program-photo">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
               </div>
@@ -168,42 +246,6 @@ const Programs = () => {
               </div>
             </div>
 
-            {/* Education */}
-            <div className="program-card featured">
-              <div className="program-photo">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
-              </div>
-              <div className="program-body">
-                <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3>Inter-Ethnic Academy</h3>
-                    <span className="program-tag education">Primary & Secondary Education</span>
-                  </div>
-                </div>
-                <p className="program-description">Addressing South Sudan's tribal divisions through education. With 63 of the 64 tribes represented in our student body, we demonstrate that unity is possible through shared learning and the Gospel's unifying power.</p>
-                <div className="program-details">
-                  <div className="detail-section">
-                    <h4>Unity Through Education</h4>
-                    <p>South Sudan's 64 unique tribes are both a source of beauty and division. Our academy was specifically named to address tribal conflicts by showing that education and faith can unite what politics divides.</p>
-                  </div>
-                  <div className="program-impacts">
-                    <h4>Key Features</h4>
-                    <ul>
-                      <li><strong>Inter-tribal unity:</strong> 63 of 64 tribes learning together, breaking down barriers</li>
-                      <li><strong>Quality education:</strong> Free, comprehensive education for all children in our care</li>
-                      <li><strong>Peace curriculum:</strong> Integrated peace education promoting reconciliation and understanding</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Vocational Training */}
             <div className="program-card">
               <div className="program-photo">
@@ -238,41 +280,49 @@ const Programs = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Agriculture */}
-            <div className="program-card">
-              <div className="program-photo">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+      {/* Program Spotlight Section */}
+      <section className="spotlight-section">
+        <div className="container">
+          <div className="programs-intro">
+            <span className="problem-eyebrow">Program Spotlight</span>
+            <h2 className="section-title">Two Programs, One Vision for South Sudan</h2>
+            <p className="programs-subtitle">A closer look at the Inter-Ethnic Academy and Daalbaai Agriculture, the programs at the heart of how we're building unity and independence for the next generation.</p>
+          </div>
+
+          <div className="spotlight-block">
+            <div className="spotlight-image">
+              <img src="https://images.unsplash.com/flagged/photo-1579133311477-9121405c78dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Students of the Inter-Ethnic Academy raising their hands in class" loading="lazy" />
+            </div>
+            <div className="spotlight-text">
+              <h3>Inter-Ethnic Academy: Where 63 Tribes Learn as One</h3>
+              <p>South Sudan's 64 tribes carry a beauty and a history that conflict has too often turned into division. The Inter-Ethnic Academy was named on purpose, to put that division in a single classroom and answer it with shared desks, shared meals, and a shared future.</p>
+              <p>Today, 63 of those 64 tribes sit side by side in our classrooms. Children who grew up hearing that another tribe was the enemy instead grow up knowing them as classmates, and it changes how the next generation sees each other.</p>
+              <p>Education here isn't separate from peacebuilding, it is peacebuilding. Every grade integrates our SLOSS peace curriculum, so reconciliation is practiced daily, not taught as a once-off lesson, and it's offered free to every child in our care so tuition is never the reason a child is left out of the unity we're building.</p>
+              <div className="spotlight-stats">
+                <span className="spotlight-stat">63 of 64 South Sudanese tribes represented</span>
+                <span className="spotlight-stat">Free primary & secondary education</span>
+                <span className="spotlight-stat">Peace curriculum in every grade</span>
               </div>
-              <div className="program-body">
-                <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2a3 3 0 0 0-3 3c0 1.5 1.5 3 3 3s3-1.5 3-3a3 3 0 0 0-3-3z"/>
-                      <path d="M19 13v-2a7 7 0 0 0-14 0v2"/>
-                      <path d="M12 22s8-4 8-10V6l-8-2-8 2v6c0 6 8 10 8 10z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3>Daalbaai Agriculture</h3>
-                    <span className="program-tag agriculture">Sustainable Farming</span>
-                  </div>
-                </div>
-                <p className="program-description">"Happiness is a result of availability of food" - This program promotes indigenous food production, utilizing South Sudan's fertile land and abundant rainfall to reduce dependency on international aid.</p>
-                <div className="program-details">
-                  <div className="detail-section">
-                    <h4>Food Independence Vision</h4>
-                    <p>The fertility of our land, combined with plenty of rain, convinces us that South Sudan can become one of the world's breadbasket countries - "a land flowing with milk and honey."</p>
-                  </div>
-                  <div className="program-impacts">
-                    <h4>Mission Goals</h4>
-                    <ul>
-                      <li><strong>Indigenous production:</strong> Developing local agricultural capacity and knowledge</li>
-                      <li><strong>Aid independence:</strong> Reducing reliance on international humanitarian assistance</li>
-                      <li><strong>Land utilization:</strong> Maximizing South Sudan's natural agricultural advantages</li>
-                    </ul>
-                  </div>
-                </div>
+            </div>
+          </div>
+
+          <div className="spotlight-block reverse">
+            <div className="spotlight-image">
+              <img src="https://images.unsplash.com/photo-1741874299706-2b8e16839aaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="A farmer tending crops in a field, representing the Daalbaai Agriculture program" loading="lazy" />
+            </div>
+            <div className="spotlight-text">
+              <h3>Daalbaai Agriculture: Growing Food Independence</h3>
+              <p>"Happiness is a result of availability of food." It's a simple line, but it's the whole reason Daalbaai exists. South Sudan's soil is fertile and its rains are generous, we believe that's not a coincidence, it's an invitation to become a breadbasket rather than a country that depends on aid to eat.</p>
+              <p>Daalbaai puts that belief into practice. Every field cultivated here feeds directly into the meals served through our Love the Hungry program, so the harvest isn't abstract, it shows up on a plate for a child that same season.</p>
+              <p>Just as important, the program teaches children and staff the agricultural knowledge to keep that cycle going long after any single harvest, sustainable techniques, local seed varieties, and land stewardship that can be carried into their own communities and futures.</p>
+              <div className="spotlight-stats">
+                <span className="spotlight-stat">Feeds directly into 620 daily meals</span>
+                <span className="spotlight-stat">Reducing reliance on international aid</span>
+                <span className="spotlight-stat">Sustainable farming skills passed on</span>
               </div>
             </div>
           </div>

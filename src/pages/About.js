@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../config/seo';
 import DonorCTA from '../components/DonorCTA';
+import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const About = () => {
   const location = useLocation();
@@ -61,8 +62,8 @@ const About = () => {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <h1>Our Story: Nile Orphan Care in South Sudan</h1>
-            <p>A journey of faith, hope, and transformation in South Sudan</p>
+            <AnimatedHeroText as="h1" text="Our Story" startDelay={0.15} />
+            <AnimatedHeroText as="p" text="A journey of faith, hope, and transformation." startDelay={0.4} />
           </div>
         </div>
       </section>
@@ -165,114 +166,6 @@ const About = () => {
             
             <div className="principle-item">
               <p>Seeks to harness the power of networking with like-minded organizations</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section id="partners" className="partners-section animate-on-scroll">
-        <div className="container">
-          <div className="partners-header">
-            <h2 className="section-title">Our Partners</h2>
-            <p>Our Partners go above and beyond to bring skills, support and donations to make a difference for everyone at Nile Orphan Care and in doing so they are making a difference to the surrounding community. <Link to="/programs">Explore the programs these partnerships make possible</Link>.</p>
-          </div>
-          
-          <div className="partners-grid">
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Discipleship_Global.png" alt="Discipleship Global logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Discipleship Global</h3>
-                <div className="partner-type">Disciple Training</div>
-                <p>Our Mission is to raise up, train, and equip believers to become disciple makers and trainers of disciple makers in order to catalyze Disciple Making Movements and Church Planting Movements across the globe.</p>
-                <a href="https://discipleshipglobal.org/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Love_the_Hungry.png" alt="Love the Hungry logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Love the Hungry</h3>
-                <div className="partner-type">Food Donation</div>
-                <p>Love the Hungry's nutrient-rich meals are donated to Non-Governmental Organizations (NGO's) worldwide with an emphasis on reaching the world's most vulnerable children.</p>
-                <a href="https://www.lovethehungry.org/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Sea_Partners.png" alt="Sea Partners logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Sea Partners</h3>
-                <div className="partner-type">Education</div>
-                <p>Their mission is to serve God through educating children and adults, advancing community development through farming and tree planting, clean water, healthcare and evangelism.</p>
-                <a href="https://sea-partners.org/about/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Partners_in_Compassionate_Care.png" alt="Partners in Compassionate Care logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Partners in Compassionate Care</h3>
-                <div className="partner-type">Healthcare Support</div>
-                <p>Partners in Compassionate Care (PCC) exists for the purpose of providing Christ-centered hope and healing to the people of South Sudan.</p>
-                <a href="https://www.pccsudan.org/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Teach_to_Transform.png" alt="Teach to Transform logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Teach to Transform</h3>
-                <div className="partner-type">Vocational Skills Training</div>
-                <p>Teach to Transform equips partners around the world with medical and vocational skills they can use to share the gospel of Christ.</p>
-                <a href="https://teachtotransform.org/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Northside_Christian_Church.png" alt="Northside Christian Church logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Northside Christian Church</h3>
-                <div className="partner-type">Local Church Support</div>
-                <p>Our mission is to connect unconnected people to Jesus. Our unwavering focus of seeing people discover the hope and joy that comes with having a relationship with Jesus Christ.</p>
-                <a href="https://www.mynorthside.com/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/SOS.png" alt="SOS logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>SOS</h3>
-                <div className="partner-type">Global Health</div>
-                <p>SOS improves global health and the environment through recovery and redistribution of surplus medical supplies.</p>
-                <a href="https://soshealthandhope.org/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
-            </div>
-            
-            <div className="partner-card">
-              <div className="partner-logo">
-                <img src="/images/Southeast_Christian_Church.png" alt="Southeast Christian Church logo" loading="lazy" />
-              </div>
-              <div className="partner-content">
-                <h3>Southeast Christian Church</h3>
-                <div className="partner-type">Local Church Support</div>
-                <p>In our mission of Connecting people to Jesus and one another, Southeast Christian Church has grown into a unified multisite community.</p>
-                <a href="https://www.se.church/" target="_blank" rel="noopener noreferrer" className="partner-link">Learn More</a>
-              </div>
             </div>
           </div>
         </div>
