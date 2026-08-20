@@ -61,7 +61,7 @@ const Navbar = () => {
 
         <div className="mobile-nav">
           <Link to="/donate" className="mobile-top-donate-btn">
-            <span className="nav-donate-heart">♥</span> Donate
+            Donate
           </Link>
           <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -83,7 +83,7 @@ const Navbar = () => {
           </ul>
           <div className="nav-actions">
             <Link to="/donate" className="nav-donate-btn">
-              <span className="nav-donate-heart">♥</span> Donate
+              Donate
             </Link>
           </div>
         </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
             <Link to="/get-involved" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Get Involved</Link>
             <Link to="/contact" className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             <Link to="/donate" className="mobile-nav-donate-btn" onClick={() => setIsMobileMenuOpen(false)}>
-              <span className="nav-donate-heart">♥</span> Donate
+              Donate
             </Link>
           </div>
         )}

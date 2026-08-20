@@ -3,21 +3,18 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import DonorCTA from '../components/DonorCTA';
 import AnimatedHeroText from '../components/AnimatedHeroText';
+import CountUpNumber from '../components/CountUpNumber';
 import { childStories } from '../data/childStories';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
-  const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
   const teamVideoId = '5YXdlMN81hk';
 
-  const heroImages = [
-    '/images/hero-1.jpeg',
-    '/images/hero-2.jpeg'
-  ];
+  const heroImage = '/images/home-hero.jpg';
 
   const newsArticles = [
     {
@@ -95,13 +92,6 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeroImage(prev => (prev + 1) % heroImages.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
-
-  useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -151,29 +141,40 @@ const Home = () => {
         path="/"
       />
       {/* Hero Section */}
-      <section className="hero" style={{backgroundImage: `url(${heroImages[currentHeroImage]})`}}>
+      <section className="hero" style={{backgroundImage: `url(${heroImage})`}}>
         <div className="hero-container">
           <div className="hero-content">
             <AnimatedHeroText as="h1" text="Transforming Lives of Vulnerable Children in South Sudan" startDelay={0.35} />
             <Link to="/donate" className="hero-donate-btn hero-word" style={{animationDelay: '1.55s'}}>
-              <span className="nav-donate-heart">♥</span> Donate Now
+              Donate Now
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Welcome Banner */}
+      <section className="welcome-banner">
+        <div className="container">
+          <h2>Welcome to Nile Orphan Care</h2>
         </div>
       </section>
 
       {/* Welcome Section */}
       <section className="welcome-section fade-in">
         <div className="container">
-          <div className="welcome-header">
-            <h2>Welcome to Nile Orphan Care</h2>
-            <p className="welcome-subtitle">Transforming lives through compassionate care and unwavering commitment</p>
-          </div>
-
           <div className="welcome-content">
-            <div className="welcome-text">
+            <div className="welcome-text-card">
+              <p className="welcome-lead">Transforming lives through compassionate care and unwavering commitment</p>
               <p>For over a decade, we have been a beacon of hope for orphaned and vulnerable children in South Sudan. Our comprehensive approach ensures every child receives the love, care, and opportunities they deserve.</p>
               <p>From emergency shelter to long-term development, we walk alongside each child on their journey to independence, providing not just basic needs but the foundation for a bright future.</p>
+            </div>
+
+            <div className="mission-image">
+              <div className="stats-image">
+                <img src="/images/welcome-to-noc.jpeg" alt="Children waving and smiling at a Nile Orphan Care community program" className="welcome-img" loading="lazy" />
+                <div className="welcome-img-overlay"></div>
+                <span className="welcome-img-caption">Community Program &middot; South Sudan</span>
+              </div>
             </div>
 
             <div className="core-values">
@@ -218,12 +219,6 @@ const Home = () => {
                   <h4>Empowerment Programs</h4>
                   <p>Leadership development and mentorship to help children become confident advocates</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="mission-image">
-              <div className="stats-image">
-                <img src="/images/welcome-to-noc.jpeg" alt="Children waving and smiling at a Nile Orphan Care community program" className="welcome-img" loading="lazy" />
               </div>
             </div>
           </div>
@@ -294,14 +289,14 @@ const Home = () => {
 
           <div className="whatwedo-grid">
             <div className="whatwedo-card">
-              <img className="whatwedo-photo" src="/images/Education.jpeg" alt="Children learning together at a Nile Orphan Care education program" loading="lazy" />
-              <h3>Education</h3>
-              <p>Quality schooling and vocational training that keep children learning and prepare them for independent futures.</p>
+              <img className="whatwedo-photo" src="/images/Education.jpeg" alt="Children from many South Sudanese tribes learning together at the Inter-Ethnic Academy" loading="lazy" />
+              <h3>Inter-Ethnic Academy</h3>
+              <p>Free, unifying education where 63 of South Sudan's tribes learn side by side in the same classrooms.</p>
             </div>
             <div className="whatwedo-card">
-              <img className="whatwedo-photo" src="/images/food.jpeg" alt="Child participating in Nile Orphan Care's nutrition program" loading="lazy" />
-              <h3>Nutrition & Food Security</h3>
-              <p>Regular meals and food support to protect children from hunger and acute malnutrition.</p>
+              <img className="whatwedo-photo" src="https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
+              <h3>Daalbaai Agriculture</h3>
+              <p>Sustainable farming that grows food independence and feeds directly into the meals we serve children.</p>
             </div>
             <div className="whatwedo-card">
               <img className="whatwedo-photo" src="/images/Health.jpeg" alt="Mobile health clinic providing medical care to children" loading="lazy" style={{objectPosition: 'center 20%'}} />
@@ -309,9 +304,9 @@ const Home = () => {
               <p>Access to medical care and health education so children can grow up healthy and strong.</p>
             </div>
             <div className="whatwedo-card">
-              <img className="whatwedo-photo" src="/images/child.jpeg" alt="Community outreach team supporting families in rural South Sudan" loading="lazy" style={{objectPosition: 'center 20%'}} />
-              <h3>Child Protection & Family Care</h3>
-              <p>Safe shelter, family-style care, and support for children who have lost parental care.</p>
+              <img className="whatwedo-photo" src="/images/food.jpeg" alt="Child participating in Nile Orphan Care's nutrition program" loading="lazy" />
+              <h3>Nutrition & Food Security</h3>
+              <p>Regular meals and food support to protect children from hunger and acute malnutrition.</p>
             </div>
           </div>
 
@@ -332,19 +327,19 @@ const Home = () => {
 
           <div className="impact-glance-list">
             <div className="impact-glance-item">
-              <span className="impact-glance-number">620</span>
+              <span className="impact-glance-number"><CountUpNumber value="620" delay={0} /></span>
               <p className="impact-glance-label">Children fed daily through our nutrition programs.</p>
             </div>
             <div className="impact-glance-item">
-              <span className="impact-glance-number">24/7</span>
+              <span className="impact-glance-number"><CountUpNumber value="24/7" delay={150} /></span>
               <p className="impact-glance-label">Medical coverage available to children in our care.</p>
             </div>
             <div className="impact-glance-item">
-              <span className="impact-glance-number">63</span>
+              <span className="impact-glance-number"><CountUpNumber value="63" delay={300} /></span>
               <p className="impact-glance-label">Tribes united across our programs and communities.</p>
             </div>
             <div className="impact-glance-item">
-              <span className="impact-glance-number">100%</span>
+              <span className="impact-glance-number"><CountUpNumber value="100%" delay={450} /></span>
               <p className="impact-glance-label">Clean water access for every child we support.</p>
             </div>
           </div>

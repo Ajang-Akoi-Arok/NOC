@@ -14,7 +14,7 @@ const DonorCTA = ({ heading, subheading, body, primaryLabel, secondaryLabel, sec
             <p className="donor-cta-body">{body}</p>
             <div className="donor-cta-buttons">
               <Link to="/donate" className="donor-cta-btn primary">
-                <span className="donor-cta-heart">&hearts;</span> {primaryLabel}
+                {primaryLabel}
               </Link>
               <Link to={secondaryTo} className="donor-cta-btn secondary">{secondaryLabel} &rarr;</Link>
             </div>

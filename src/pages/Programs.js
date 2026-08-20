@@ -61,8 +61,9 @@ const Programs = () => {
           <div className="programs-grid">
             {/* Education */}
             <div className="program-card featured">
-              <div className="program-photo">
+              <div className="program-photo program-photo-gallery">
                 <img src="/images/Education.jpeg" alt="Children from many South Sudanese tribes learning together at the Inter-Ethnic Academy" loading="lazy" />
+                <img src="https://images.unsplash.com/flagged/photo-1579133311477-9121405c78dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students of the Inter-Ethnic Academy raising their hands in class" loading="lazy" />
               </div>
               <div className="program-body">
                 <div className="program-header">
@@ -99,8 +100,9 @@ const Programs = () => {
 
             {/* Agriculture */}
             <div className="program-card featured">
-              <div className="program-photo">
-                <img src="https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
+              <div className="program-photo program-photo-gallery">
+                <img src="https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1741874299706-2b8e16839aaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="A farmer tending crops in a field, representing the Daalbaai Agriculture program" loading="lazy" />
               </div>
               <div className="program-body">
                 <div className="program-header">
