@@ -67,12 +67,6 @@ const Programs = () => {
               </div>
               <div className="program-body">
                 <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                  </div>
                   <div>
                     <h3>Inter-Ethnic Academy</h3>
                     <span className="program-tag education">Primary & Secondary Education</span>
@@ -106,13 +100,6 @@ const Programs = () => {
               </div>
               <div className="program-body">
                 <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2a3 3 0 0 0-3 3c0 1.5 1.5 3 3 3s3-1.5 3-3a3 3 0 0 0-3-3z"/>
-                      <path d="M19 13v-2a7 7 0 0 0-14 0v2"/>
-                      <path d="M12 22s8-4 8-10V6l-8-2-8 2v6c0 6 8 10 8 10z"/>
-                    </svg>
-                  </div>
                   <div>
                     <h3>Daalbaai Agriculture</h3>
                     <span className="program-tag agriculture">Sustainable Farming</span>
@@ -145,13 +132,6 @@ const Programs = () => {
               </div>
               <div className="program-body">
                 <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M20 12c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z"/>
-                      <path d="M12 8v8"/>
-                      <path d="M8 12h8"/>
-                    </svg>
-                  </div>
                   <div>
                     <h3>Love the Hungry (LTH)</h3>
                     <span className="program-tag nutrition">Nutrition Program</span>
@@ -182,11 +162,6 @@ const Programs = () => {
               </div>
               <div className="program-body">
                 <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                    </svg>
-                  </div>
                   <div>
                     <h3>Partners for Compassionate Care (PCC)</h3>
                     <span className="program-tag medical">Medical Care & Health Education</span>
@@ -217,14 +192,6 @@ const Programs = () => {
               </div>
               <div className="program-body">
                 <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                      <circle cx="9" cy="7" r="4"/>
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                  </div>
                   <div>
                     <h3>Discipleship Global (DG)</h3>
                     <span className="program-tag spiritual">Discipleship & Biblical Training</span>
@@ -255,11 +222,6 @@ const Programs = () => {
               </div>
               <div className="program-body">
                 <div className="program-header">
-                  <div className="program-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                    </svg>
-                  </div>
                   <div>
                     <h3>Technical & Vocational Training</h3>
                     <span className="program-tag vocational">Skills Development</span>

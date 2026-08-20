@@ -26,64 +26,43 @@ const Donate = () => {
         path="/donate"
       />
       {/* Intro Section */}
-      <section className="donate-intro-section">
+      <section className="donate-intro-section" style={{backgroundImage: `url(/images/donate-hero-new.jpeg)`}}>
+        <div className="donate-intro-overlay"></div>
         <div className="container">
-          <div className="donate-intro-grid">
-            <div className="donate-intro-text">
-              <h1>Make a Difference Today</h1>
-              <p>Your donation directly impacts the lives of vulnerable children in South Sudan, providing them with education, healthcare, shelter, and hope for a brighter future.</p>
+          <div className="donate-intro-text">
+            <span className="donate-intro-eyebrow">Make a Difference Today</span>
+            <h1>Your Gift Changes a Child's Story</h1>
+            <p>Your donation directly impacts the lives of vulnerable children in South Sudan, providing them with education, healthcare, shelter, and hope for a brighter future.</p>
+            <div className="donate-intro-actions">
+              <a href="https://app.aplos.com/aws/give/NileOrphanCare" target="_blank" rel="noopener noreferrer" className="donate-now-btn">
+                Donate Securely Now
+              </a>
+              <a href="#donation-hub" className="donate-intro-scroll">See Your Impact &darr;</a>
             </div>
-            <img className="donate-intro-photo" src="/images/donate-hero.jpeg" alt="Nile Orphan Care supporting children in South Sudan" loading="lazy" />
           </div>
         </div>
       </section>
 
       {/* Donation Hub Section */}
-      <section className="donation-hub-section">
+      <section id="donation-hub" className="donation-hub-section">
         <div className="container">
           <div className="donation-hub-card">
             <div className="donation-hub-block">
               <h2 className="section-title">Your Impact</h2>
               <div className="impact-grid">
                 <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                  </div>
                   <h3>$25</h3>
                   <p>Provides school supplies and books for one child for a month</p>
                 </div>
                 <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7z"/>
-                    </svg>
-                  </div>
                   <h3>$50</h3>
                   <p>Covers nutritious meals for one child for two weeks</p>
                 </div>
                 <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 12l2 2 4-4"/>
-                      <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
-                      <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
-                      <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
-                      <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"/>
-                    </svg>
-                  </div>
                   <h3>$100</h3>
                   <p>Provides healthcare and medical support for one child for a month</p>
                 </div>
                 <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                      <polyline points="9,22 9,12 15,12 15,22"/>
-                    </svg>
-                  </div>
                   <h3>$250</h3>
                   <p>Supports safe housing and accommodation for one child for a month</p>
                 </div>

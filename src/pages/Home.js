@@ -356,7 +356,7 @@ const Home = () => {
           <div className="why-exist-content">
             <div className="why-exist-text">
               <h2>Why Nile Orphan Care Exists</h2>
-              <p>Across communities along the Nile, many children are left vulnerable due to poverty, conflict, disease, and displacement. Without intervention, these children face limited access to education, healthcare, and emotional support, putting their futures at risk.</p>
+              <p>Across communities in South Sudan, many children are left vulnerable due to poverty, conflict, disease, and displacement. Without intervention, these children face limited access to education, healthcare, and emotional support, putting their futures at risk.</p>
               <p>Nile Orphan Care was founded to break this cycle. We believe that every child deserves safety, education, and the chance to dream. Our mission is not just to care for children, but to empower them to thrive as independent, confident adults. <Link to="/programs">See how our programs support children in South Sudan</Link>.</p>
             </div>
             <div className="why-exist-image">
