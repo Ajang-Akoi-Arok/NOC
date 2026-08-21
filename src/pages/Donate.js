@@ -23,7 +23,7 @@ const Donate = () => {
       </section>
 
       {/* Donation Hub Section */}
-      <section className="donation-hub-section">
+      <section id="donation-hub" className="donation-hub-section">
         <div className="container">
           <div className="donation-hub-card">
             <div className="donation-hub-block donation-hub-cta">
