@@ -13,7 +13,13 @@ const ScrollToHash = () => {
       const previousBehavior = root.style.scrollBehavior;
       root.style.scrollBehavior = 'auto';
       window.scrollTo(0, 0);
-      root.style.scrollBehavior = previousBehavior;
+      // Restoring the previous (smooth) behavior on the next frame, rather
+      // than synchronously, avoids a race where the browser picks up the
+      // reverted value before it has actually processed the instant jump —
+      // which otherwise makes this reset visibly animate after all.
+      requestAnimationFrame(() => {
+        root.style.scrollBehavior = previousBehavior;
+      });
       return;
     }
 

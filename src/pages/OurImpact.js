@@ -43,10 +43,13 @@ const OurImpact = () => {
       document.body.style.top = '';
       document.body.style.left = '';
       document.body.style.right = '';
-      const prevBehavior = document.documentElement.style.scrollBehavior;
-      document.documentElement.style.scrollBehavior = 'auto';
+      const root = document.documentElement;
+      const prevBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
       window.scrollTo(0, scrollY);
-      document.documentElement.style.scrollBehavior = prevBehavior;
+      requestAnimationFrame(() => {
+        root.style.scrollBehavior = prevBehavior;
+      });
     };
   }, [storyModal]);
 
