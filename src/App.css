@@ -2179,10 +2179,8 @@ html {
 .initiatives-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+  gap: 2rem;
   margin-top: 3rem;
-  border: 1px solid #e9ecef;
-  background: #fff;
 }
 .initiative-card {
   padding-top: 1.25rem;
@@ -2937,11 +2935,6 @@ html {
   background: var(--border);
   margin: 3.5rem 0;
 }
-.donation-hub-cta {
-  background: #f7fafd;
-  margin: 0 -4rem;
-  padding: 3rem 4rem;
-}
 .donation-hub-cta h2 {
   font-size: 2rem;
   font-weight: 800;
@@ -3222,18 +3215,6 @@ html {
 
   .initiatives-grid {
     grid-template-columns: 1fr;
-  }
-
-  .initiative-card {
-    border-right: none;
-  }
-
-  .initiative-card:nth-last-child(-n+2) {
-    border-bottom: 1px solid #e9ecef;
-  }
-
-  .initiative-card:last-child {
-    border-bottom: none;
   }
 }
 @media (max-width: 992px) {
@@ -3847,11 +3828,6 @@ html {
 @media (max-width: 768px) {
   .donation-hub-divider {
     margin: 2.5rem 0;
-  }
-
-  .donation-hub-cta {
-    margin: 0 -1.5rem;
-    padding: 2rem 1.5rem;
   }
 
   .donation-hub-cta h2 {
