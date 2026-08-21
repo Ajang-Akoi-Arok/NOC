@@ -1,22 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const Donate = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="donate-page">
@@ -25,15 +12,12 @@ const Donate = () => {
         description="Donate to Nile Orphan Care and directly support orphaned and vulnerable children in South Sudan with education, healthcare, nutrition, and shelter."
         path="/donate"
       />
-      {/* Intro Section */}
-      <section className="donate-intro-section">
-        <div className="container">
-          <div className="donate-intro-grid">
-            <div className="donate-intro-text">
-              <h1>Make a Difference Today</h1>
-              <p>Your donation directly impacts the lives of vulnerable children in South Sudan, providing them with education, healthcare, shelter, and hope for a brighter future.</p>
-            </div>
-            <img className="donate-intro-photo" src="/images/donate-hero.jpeg" alt="Nile Orphan Care supporting children in South Sudan" loading="lazy" />
+      {/* Hero Section */}
+      <section className="contact-hero donate-hero-section">
+        <div className="hero-container">
+          <div className="hero-content">
+            <AnimatedHeroText as="h1" text="Make a Difference Today" startDelay={0.15} />
+            <AnimatedHeroText as="p" text="Your gift directly reaches a child who needs it." startDelay={0.5} />
           </div>
         </div>
       </section>
@@ -42,59 +26,10 @@ const Donate = () => {
       <section className="donation-hub-section">
         <div className="container">
           <div className="donation-hub-card">
-            <div className="donation-hub-block">
-              <h2 className="section-title">Your Impact</h2>
-              <div className="impact-grid">
-                <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                  </div>
-                  <h3>$25</h3>
-                  <p>Provides school supplies and books for one child for a month</p>
-                </div>
-                <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7z"/>
-                    </svg>
-                  </div>
-                  <h3>$50</h3>
-                  <p>Covers nutritious meals for one child for two weeks</p>
-                </div>
-                <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 12l2 2 4-4"/>
-                      <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
-                      <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
-                      <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
-                      <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"/>
-                    </svg>
-                  </div>
-                  <h3>$100</h3>
-                  <p>Provides healthcare and medical support for one child for a month</p>
-                </div>
-                <div className="impact-card">
-                  <div className="impact-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                      <polyline points="9,22 9,12 15,12 15,22"/>
-                    </svg>
-                  </div>
-                  <h3>$250</h3>
-                  <p>Supports safe housing and accommodation for one child for a month</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="donation-hub-divider"></div>
-
             <div className="donation-hub-block donation-hub-cta">
+              <span className="problem-eyebrow">Give Today</span>
               <h2>Ready to Make an Impact?</h2>
-              <p>Join thousands of supporters who are transforming lives. Your secure donation helps provide immediate care and long-term opportunities for children in need.</p>
+              <p>Join the supporters who are transforming lives. Your secure donation helps provide immediate care, food, healthcare, and education for children in need across South Sudan.</p>
               <a href="https://app.aplos.com/aws/give/NileOrphanCare" target="_blank" rel="noopener noreferrer" className="donate-now-btn">
                 Donate Securely Now
               </a>
@@ -115,7 +50,7 @@ const Donate = () => {
                 </div>
                 <div className="way-card">
                   <h3>Corporate Matching</h3>
-                  <p>Many employers match charitable donations - double your impact.</p>
+                  <p>Many employers match charitable donations, double your impact.</p>
                 </div>
                 <div className="way-card">
                   <h3>Legacy Giving</h3>
@@ -133,24 +68,24 @@ const Donate = () => {
       {/* Statistics Section */}
       <section className="donation-stats">
         <div className="container">
-          <h2 className="section-title">Your Donations at Work</h2>
+          <h2 className="section-title">Your Donation at Work</h2>
           <p className="donation-stats-intro">See the <Link to="/our-impact">full picture of our impact across South Sudan</Link>.</p>
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">92%</div>
-              <div className="stat-label">of donations go directly to programs</div>
+              <div className="stat-number">620</div>
+              <div className="stat-label">children fed daily through our nutrition programs</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">2,500+</div>
-              <div className="stat-label">children supported annually</div>
+              <div className="stat-number">64</div>
+              <div className="stat-label">tribes united across our programs and communities</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">15</div>
-              <div className="stat-label">years of trusted service</div>
+              <div className="stat-number">24/7</div>
+              <div className="stat-label">medical coverage available to children in our care</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">98%</div>
-              <div className="stat-label">donor satisfaction rate</div>
+              <div className="stat-number">2013</div>
+              <div className="stat-label">the year Nile Orphan Care was established</div>
             </div>
           </div>
         </div>

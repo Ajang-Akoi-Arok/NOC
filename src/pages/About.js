@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../config/seo';
@@ -7,7 +7,6 @@ import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const About = () => {
   const location = useLocation();
-  const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
     // Add scroll animation observer
@@ -31,15 +30,15 @@ const About = () => {
   }, [location]);
 
   const boardMembers = [
-    { name: "John Deng Ater", title: "Founder & Executive Director", image: "/board/John-3.webp" },
-    { name: "Dave Albert", title: "President - Board", image: "/board/Dave.webp" },
+    { name: "John Deng Ater", title: "Founder & Executive Director", image: "/board/John-3.webp", imagePosition: "center 15%" },
+    { name: "Dave Albert", title: "President - Board", image: "/board/Dave.webp", imagePosition: "center 15%" },
     { name: "Ted Miller", title: "Board Vice President", image: "/board/Ted.webp" },
     { name: "Susan Albert", title: "Secretary", image: "/board/Susan.webp" },
     { name: "Joanne Keifer", title: "Treasurer - Volunteer", image: "/board/Joane.webp" },
     { name: "Tom Cox", title: "Board Member", image: "/board/tom_cox.webp" },
     { name: "Steve Roberts", title: "Committee Member", image: "/board/Steve_Roberts.webp" },
     { name: "Meredith Miller", title: "Committee - Education", image: "/board/miller.webp" },
-    { name: "Evan Nord", title: "Board Member - Construction Committee", image: "/board/Evan.webp" }
+    { name: "Evan Nord", title: "Board Member - Construction Committee", image: "/board/Evan.webp", imagePosition: "center 20%" }
   ];
 
 
@@ -65,6 +64,15 @@ const About = () => {
             <AnimatedHeroText as="h1" text="Our Story" startDelay={0.15} />
             <AnimatedHeroText as="p" text="A journey of faith, hope, and transformation." startDelay={0.4} />
           </div>
+        </div>
+      </section>
+
+      {/* Who We Are Section */}
+      <section className="about-intro animate-on-scroll">
+        <div className="container">
+          <span className="problem-eyebrow">Who We Are</span>
+          <h2 className="section-title">A family for South Sudan's most vulnerable children</h2>
+          <p className="problem-intro">Nile Orphan Care is a faith-driven organization walking alongside orphaned, abandoned and at-risk children across South Sudan. What began as a single scholarship program in 2011 has grown into a family of care providing shelter, education, healthcare and nutrition — so every child we serve has the chance to grow up safe, loved and hopeful about the future.</p>
         </div>
       </section>
 
@@ -98,23 +106,19 @@ const About = () => {
           <div className="story-header">
             <h2 className="section-title">Meet John</h2>
           </div>
-          <div className="john-story-grid">
-            <div className="story-text">
-              <p>John, founder of NOC, believes that the only one who kept him alive during the civil war was not his widow mother, but GOD ALONE. He was present in these times of trouble. Since he accepted Christ as his personal Savior at age 6, he remains a devoted Christian in His service.</p>
-              
-              <p>In 2011, Rev. John Deng Ater took a mission trip to then autonomous Southern Sudan, which later seceded from Sudan and became the independent Republic of South Sudan on July 9, 2011 after decades of African's longest civil war that claimed millions of lives. The heart-rending stories from orphaned, street and abandoned children compelled Rev. Ater to initiate the Orphans' Scholarship Program. The goal was to provide financial assistance for education and care to South Sudanese orphaned, street, abandoned and at-risk children who are living in refugee camps (Kenya and Uganda).</p>
-              
-              <p>In 2013, the program was extended to South Sudan with its first headquarters located in Yei, Central Equatorial State. But, following a political crisis in 2016, Yei was seriously affected and left with no access to humanitarian aid and other means of survival. As insecurity intensified, the organization was left with no choice but to evacuate children along with their caretakers to Juba, the place now considered to be home for these disadvantaged children.</p>
-              
-              <div className="scripture-quote">
-                <blockquote>
-                  "Do not withhold good from those who deserve it, when it is in your power to act. Do not say to your neighbor, 'Come back later; I'll give it tomorrow,' when you now have it with you."
-                </blockquote>
-                <cite>Proverbs 3:27-28</cite>
-              </div>
-            </div>
-            <div className="john-image">
-              <img src="/board/John-3.webp" alt="Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care" loading="lazy" />
+          <div className="john-story-body">
+            <img className="john-image-float" src="/board/John-3.webp" alt="Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care" loading="lazy" />
+            <p>John, founder of NOC, believes that the only one who kept him alive during the civil war was not his widow mother, but GOD ALONE. He was present in these times of trouble. Since he accepted Christ as his personal Savior at age 6, he remains a devoted Christian in His service.</p>
+
+            <p>In 2011, Rev. John Deng Ater took a mission trip to then autonomous Southern Sudan, which later seceded from Sudan and became the independent Republic of South Sudan on July 9, 2011 after decades of African's longest civil war that claimed millions of lives. The heart-rending stories from orphaned, street and abandoned children compelled Rev. Ater to initiate the Orphans' Scholarship Program. The goal was to provide financial assistance for education and care to South Sudanese orphaned, street, abandoned and at-risk children who are living in refugee camps (Kenya and Uganda).</p>
+
+            <p>In 2013, the program was extended to South Sudan with its first headquarters located in Yei, Central Equatorial State. But, following a political crisis in 2016, Yei was seriously affected and left with no access to humanitarian aid and other means of survival. As insecurity intensified, the organization was left with no choice but to evacuate children along with their caretakers to Juba, the place now considered to be home for these disadvantaged children.</p>
+
+            <div className="scripture-quote">
+              <blockquote>
+                "Do not withhold good from those who deserve it, when it is in your power to act. Do not say to your neighbor, 'Come back later; I'll give it tomorrow,' when you now have it with you."
+              </blockquote>
+              <cite>Proverbs 3:27-28</cite>
             </div>
           </div>
         </div>
@@ -127,46 +131,24 @@ const About = () => {
             <h2 className="section-title">Guiding Principles</h2>
           </div>
           
-          <div className="principles-grid">
-            <div className="principle-item">
-              <p>Trusts in God who makes all things possible and is empowered by the love of God which manifests itself to us in actions and truth, chiefly through Jesus Christ</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Pursues excellence, integrity, accountability, and honesty in our deeds</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Seeks to be good stewards of God's resources entrusted to us and to maximize the Kingdom impact of its financial and non-financial resources</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Strives to be profitable and sustainable in the long term</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Has a kingdom motivation, purpose, and plan that is shared and embraced by the board and staff</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Aims at holistic transformation and welfare of individuals (children and staff) and communities through God's Word and His Spirit</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Models Christ-like, servant leadership, and develops it in others</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Intentionally implements ethical Christ-honoring practice that does not conflict with the gospel</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Is pro-active in intercession and seeks the prayer support of others</p>
-            </div>
-            
-            <div className="principle-item">
-              <p>Seeks to harness the power of networking with like-minded organizations</p>
-            </div>
+          <div className="principles-list">
+            {[
+              "Trusts in God who makes all things possible and is empowered by the love of God which manifests itself to us in actions and truth, chiefly through Jesus Christ",
+              "Pursues excellence, integrity, accountability, and honesty in our deeds",
+              "Seeks to be good stewards of God's resources entrusted to us and to maximize the Kingdom impact of its financial and non-financial resources",
+              "Strives to be profitable and sustainable in the long term",
+              "Has a kingdom motivation, purpose, and plan that is shared and embraced by the board and staff",
+              "Aims at holistic transformation and welfare of individuals (children and staff) and communities through God's Word and His Spirit",
+              "Models Christ-like, servant leadership, and develops it in others",
+              "Intentionally implements ethical Christ-honoring practice that does not conflict with the gospel",
+              "Is pro-active in intercession and seeks the prayer support of others",
+              "Seeks to harness the power of networking with like-minded organizations",
+            ].map((principle, index) => (
+              <div className="principle-row" key={index}>
+                <span className="principle-number">{String(index + 1).padStart(2, '0')}</span>
+                <p>{principle}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -179,38 +161,21 @@ const About = () => {
             <p className="process-intro">Although its priority is to help children who lost parents either through war or HIV/AIDS, etc., Nile Orphan Care finds it extremely difficult to turn down or stand by as a staggering number of children in war-torn South Sudan are wailing in the street and not knowing what tomorrow holds for them. For that reason, the organization has four ways to find and adopt children:</p>
           </div>
           
-          <div className="process-methods-professional">
-            <div className="method-item-professional">
-              <div className="method-content">
-                <div className="method-number">1</div>
-                <h3>The Organization's Assigned Team</h3>
-                <p>This team is responsible to find and invite children into the program</p>
+          <div className="principles-list">
+            {[
+              { title: "The Organization's Assigned Team", body: "This team is responsible to find and invite children into the program" },
+              { title: 'Institutions', body: 'NOC works in partnership with other institutions to accept children who have undergone background checks with them' },
+              { title: 'Communities', body: 'This method required us to work with leaders from diverse communities whom we believe to know the status of the child/children they are bringing to us. The integrity of these leaders is extremely important under this method.' },
+              { title: 'Walk-ins', body: 'Under this category, orphaned, street, abandoned and at-risk children who hear about us can find their way to the center; explain their situation and desperately plea for help. With verification purpose, the assigned team for the organization carefully evaluates their lives stories and admits them in the program accordingly.' },
+            ].map((method, index) => (
+              <div className="principle-row" key={method.title}>
+                <span className="principle-number">{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 className="principle-row-title">{method.title}</h3>
+                  <p>{method.body}</p>
+                </div>
               </div>
-            </div>
-
-            <div className="method-item-professional">
-              <div className="method-content">
-                <div className="method-number">2</div>
-                <h3>Institutions</h3>
-                <p>NOC works in partnership with other institutions to accept children who have undergone background checks with them</p>
-              </div>
-            </div>
-
-            <div className="method-item-professional">
-              <div className="method-content">
-                <div className="method-number">3</div>
-                <h3>Communities</h3>
-                <p>This method required us to work with leaders from diverse communities whom we believe to know the status of the child/children they are bringing to us. The integrity of these leaders is extremely important under this method.</p>
-              </div>
-            </div>
-
-            <div className="method-item-professional">
-              <div className="method-content">
-                <div className="method-number">4</div>
-                <h3>Walk-ins</h3>
-                <p>Under this category, orphaned, street, abandoned and at-risk children who hear about us can find their way to the center; explain their situation and desperately plea for help. With verification purpose, the assigned team for the organization carefully evaluates their lives stories and admits them in the program accordingly.</p>
-              </div>
-            </div>
+            ))}
           </div>
           
           <div className="context-note">
@@ -240,9 +205,14 @@ const About = () => {
           
           <div className="board-grid">
             {boardMembers.map((member, index) => (
-              <div key={index} className="board-member" onClick={() => setSelectedMember(member)}>
+              <div key={index} className="board-member">
                 <div className="member-photo">
-                  <img src={member.image} alt={`${member.name}, ${member.title}`} loading="lazy" />
+                  <img
+                    src={member.image}
+                    alt={`${member.name}, ${member.title}`}
+                    loading="lazy"
+                    style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+                  />
                 </div>
                 <div className="member-info">
                   <h3>{member.name}</h3>
@@ -262,20 +232,6 @@ const About = () => {
         secondaryLabel="See Our Impact"
         secondaryTo="/our-impact"
       />
-
-      {/* Modal */}
-      {selectedMember && (
-        <div className="modal-overlay" onClick={() => setSelectedMember(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedMember(null)}>×</button>
-            <div className="modal-body">
-              <div className="modal-photo">
-                <img src={selectedMember.image} alt={`${selectedMember.name}, ${selectedMember.title}`} />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

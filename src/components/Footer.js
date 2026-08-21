@@ -12,7 +12,10 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <Link to="/" className="footer-logo">
               <img src="/images/noc_logo.png" alt="Nile Orphan Care" className="footer-logo-img" />
-              <span className="footer-logo-text">Nile<br /><span className="footer-logo-text-sub"><span className="footer-logo-text-cap">O</span>rphan Care</span></span>
+              <span className="footer-logo-text">
+                <span className="logo-text-main">NILE</span>
+                <span className="footer-logo-text-sub">Orphan Care</span>
+              </span>
             </Link>
             <p>Transforming lives and building futures for orphaned children along the Nile region. Every child deserves love, care, and opportunity.</p>
             <div className="footer-social-icons">
@@ -45,15 +48,13 @@ const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h3>Quick Links</h3>
+            <h3>Explore</h3>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/programs">Programs</Link></li>
-              <li><a href="/#stories-section">Stories</a></li>
-              <li><a href="/#news-section">News</a></li>
-              <li><Link to="/donate">Donate</Link></li>
-              <li><Link to="/get-involved">Volunteer</Link></li>
+              <li><Link to="/programs">Our Programs</Link></li>
+              <li><Link to="/our-impact">Our Impact</Link></li>
+              <li><Link to="/get-involved">Get Involved</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>

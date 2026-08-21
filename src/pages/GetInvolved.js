@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import DonorCTA from '../components/DonorCTA';
 import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const GetInvolved = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="get-involved-page">
@@ -26,7 +14,7 @@ const GetInvolved = () => {
         path="/get-involved"
       />
       {/* Hero Section */}
-      <section className="contact-hero">
+      <section className="contact-hero get-involved-hero">
         <div className="hero-container">
           <div className="hero-content">
             <AnimatedHeroText as="h1" text="Get Involved" startDelay={0.15} />
@@ -35,106 +23,90 @@ const GetInvolved = () => {
         </div>
       </section>
 
-      <section id="help-section" className="help-section">
+      {/* Intro Section */}
+      <section className="problem-section get-involved-intro fade-in">
         <div className="container">
-          <div className="help-header">
-            <h2 className="section-title">How You Can Make a Difference</h2>
-            <p className="help-subtitle">Your support creates lasting change in the lives of vulnerable children. Choose the way that works best for you to join our mission of hope and transformation.</p>
-          </div>
-
-          <div className="help-grid">
-            <div className="help-option featured">
-              <div className="help-content">
-                <h3>Donate</h3>
-                <div className="help-amount">Any amount helps</div>
-                <p>Make an immediate impact with your generous gift. Your donation provides emergency care, educational materials, medical treatment, facility improvements, or supports our general operations. Every dollar goes directly toward changing lives.</p>
-                <ul className="help-benefits">
-                  <li>Immediate impact on urgent needs</li>
-                  <li>100% goes to programs</li>
-                  <li>Flexible giving options</li>
-                  <li>Memorial and honor gifts available</li>
-                </ul>
-                <button
-                  className="help-cta primary"
-                  onClick={() => window.open('https://app.aplos.com/aws/give/NileOrphanCare', '_blank')}
-                >
-                  Donate Now
-                </button>
-              </div>
+          <div className="get-involved-intro-grid">
+            <div className="problem-header">
+              <span className="problem-eyebrow">How to Help</span>
+              <h2 className="section-title">There's a place for you in this story.</h2>
+              <p className="problem-intro">Every child in our care is there because someone decided to act, a donor, a volunteer, a partner, a friend who told someone else. Some of what's below takes money, some takes time, and some just takes your voice. All of it matters.</p>
             </div>
-
-            <div className="help-option">
-              <div className="help-content">
-                <h3>Volunteer Opportunities</h3>
-                <div className="help-amount">Share your talents</div>
-                <p>Join our dedicated team of volunteers and make a hands-on difference. Whether you're a teacher, healthcare professional, tradesperson, or simply someone with a caring heart, we have meaningful ways for you to contribute your time and skills.</p>
-                <ul className="help-benefits">
-                  <li>Teaching and tutoring programs</li>
-                  <li>Healthcare and counseling support</li>
-                  <li>Administrative and fundraising help</li>
-                  <li>Skills-based volunteering opportunities</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="help-option">
-              <div className="help-content">
-                <h3>Partner With Us</h3>
-                <div className="help-amount">Corporate partnerships</div>
-                <p>Create meaningful partnerships that align with your organization's values. From employee engagement initiatives to facility sponsorships, we'll work together to develop impactful programs that make a real difference.</p>
-                <ul className="help-benefits">
-                  <li>Employee volunteer programs</li>
-                  <li>Matching gift opportunities</li>
-                  <li>Corporate social responsibility</li>
-                  <li>Custom partnership packages</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="help-option">
-              <div className="help-content">
-                <h3>Spread Awareness</h3>
-                <div className="help-amount">Amplify our mission</div>
-                <p>Help us reach more people by sharing our story. Follow us on social media, share our posts, tell friends and family about our work, or invite us to speak at your organization. Your voice can help us find more supporters and advocates.</p>
-                <ul className="help-benefits">
-                  <li>Social media advocacy</li>
-                  <li>Speaking engagement opportunities</li>
-                  <li>Ambassador program participation</li>
-                  <li>Community outreach support</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="help-option">
-              <div className="help-content">
-                <h3>Monthly Giving</h3>
-                <div className="help-amount">Sustained impact</div>
-                <p>Join our monthly giving program for consistent, ongoing support. Monthly donors provide the stable funding we need to plan long-term programs and respond quickly to urgent needs as they arise.</p>
-                <ul className="help-benefits">
-                  <li>Predictable program funding</li>
-                  <li>Lower processing costs</li>
-                  <li>Exclusive donor updates</li>
-                  <li>Easy to manage and modify</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="help-option">
-              <div className="help-content">
-                <h3>Legacy Giving</h3>
-                <div className="help-amount">Leave a lasting impact</div>
-                <p>Create a lasting legacy through planned giving. Whether through wills, trusts, or other estate planning vehicles, your legacy gift ensures our mission continues for generations to come.</p>
-                <ul className="help-benefits">
-                  <li>Estate planning options</li>
-                  <li>Tax benefits available</li>
-                  <li>Professional guidance provided</li>
-                  <li>Lasting impact on children's lives</li>
-                </ul>
-              </div>
-            </div>
+            <img className="get-involved-intro-photo" src="/images/child.jpeg" alt="A volunteer holding a child at Nile Orphan Care" loading="lazy" />
           </div>
         </div>
       </section>
+
+      {/* Donate Feature Section */}
+      <section className="problem-section donate-feature-section fade-in">
+        <div className="container">
+          <div className="problem-header">
+            <span className="problem-eyebrow">Give</span>
+            <h2 className="section-title">Donate</h2>
+          </div>
+          <div className="story-media-body donate-feature-body">
+            <img className="john-image-float donate-feature-photo" src="/images/hero-2.jpeg" alt="Volunteers and board members visiting children at Nile Orphan Care" loading="lazy" />
+            <p>A gift to Nile Orphan Care goes straight to work, a fortified meal through Love the Hungry, a nurse's visit at our on-site clinic, a seat in the Inter-Ethnic Academy, or a roof over a child's head after a storm. There's no layer between your donation and the child it reaches.</p>
+            <p>Give once or give monthly, whichever fits your life. You can also designate a gift in memory or honor of someone, and we're glad to talk through what your support could fund if you'd like it directed somewhere specific.</p>
+            <Link to="/donate" className="donor-cta-btn primary donate-feature-btn">Donate Now</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Ways to Help Section */}
+      <section className="initiatives-section other-ways-section fade-in">
+        <div className="container">
+          <div className="initiatives-intro">
+            <h2 className="section-title">More Ways to Help</h2>
+            <p className="initiatives-subtitle">Not everyone can give financially right now, and that's alright. Here's what else moves the mission forward.</p>
+          </div>
+
+          <div className="initiatives-grid">
+            {[
+              {
+                title: 'Volunteer',
+                badge: 'Share your time',
+                body: "Teachers, healthcare workers, tradespeople, and anyone with a caring heart can put real skills to use here, whether that's tutoring, counseling support, or lending a hand with admin and fundraising.",
+              },
+              {
+                title: 'Partner With Us',
+                badge: 'Corporate & church',
+                body: 'Employee giving programs, matching gifts, facility sponsorships, mission trips, we build partnerships around what your organization already does well and cares about.',
+              },
+              {
+                title: 'Spread Awareness',
+                badge: 'Amplify our mission',
+                body: "Share our story on social media, invite us to speak at your church or organization, or simply tell someone who hasn't heard of us yet. Awareness is how new supporters find their way here.",
+              },
+              {
+                title: 'Monthly Giving',
+                badge: 'Sustained impact',
+                body: 'Recurring gifts, of any size, are what let us plan more than a month ahead: signing a teacher\'s contract, committing to a clinic partnership, starting a build before every dollar is already in hand.',
+              },
+              {
+                title: 'Legacy Giving',
+                badge: 'A lasting gift',
+                body: "Through a will, trust, or other estate gift, you can extend your support to the generations of children who'll come through our doors long after today. We're happy to talk through the options with you and your advisor.",
+              },
+            ].map((way) => (
+              <div className="initiative-card" key={way.title}>
+                <h3>{way.title}</h3>
+                <span className="achievement-badge">{way.badge}</span>
+                <p>{way.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <DonorCTA
+        heading="A child is waiting for someone to say yes."
+        subheading="It could be you."
+        body="However you're able to help, financially, with your time, or just by sharing our story, it becomes part of a child's chance at a different future. Thank you for considering it."
+        primaryLabel="Donate Today"
+        secondaryLabel="See Our Programs"
+        secondaryTo="/programs"
+      />
     </div>
   );
 };

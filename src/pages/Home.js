@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Utensils, HeartPulse, Users, Droplet } from 'lucide-react';
 import SEO from '../components/SEO';
 import DonorCTA from '../components/DonorCTA';
 import AnimatedHeroText from '../components/AnimatedHeroText';
@@ -7,8 +8,11 @@ import CountUpNumber from '../components/CountUpNumber';
 import { childStories } from '../data/childStories';
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isStoriesAutoPlaying, setIsStoriesAutoPlaying] = useState(true);
+  const storiesTrackRef = useRef(null);
+  const [storyTrackOffset, setStoryTrackOffset] = useState(0);
+  const [visibleStoryCards, setVisibleStoryCards] = useState(3);
   const [openFaq, setOpenFaq] = useState(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showAllNews, setShowAllNews] = useState(false);
@@ -87,11 +91,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -105,33 +104,78 @@ const Home = () => {
       });
     }, observerOptions);
 
-    const animateElements = document.querySelectorAll('.fade-in');
+    const animateElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
     animateElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [loading]);
+  }, []);
 
-  const maxSlides = childStories.length - 2;
-  
+  const maxSlides = Math.max(0, childStories.length - visibleStoryCards);
+
+  // Reads each card's real rendered position instead of multiplying a fixed
+  // step, so rounding/sub-pixel differences between cards never accumulate
+  // into visible drift after paging through several slides.
+  useEffect(() => {
+    const measure = () => {
+      const track = storiesTrackRef.current;
+      const targetCard = track && track.children[currentTestimonial];
+      if (!track || !targetCard) return;
+      const firstCard = track.firstElementChild;
+      const cardStyle = window.getComputedStyle(firstCard);
+      const step = firstCard.offsetWidth + parseFloat(cardStyle.marginRight || '0');
+      const viewport = track.parentElement.offsetWidth;
+      setVisibleStoryCards(Math.max(1, Math.round(viewport / step)));
+      setStoryTrackOffset(targetCard.offsetLeft);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [currentTestimonial]);
+
+  useEffect(() => {
+    setCurrentTestimonial((prev) => Math.min(prev, maxSlides));
+  }, [maxSlides]);
+
   const nextTestimonial = () => {
+    setIsStoriesAutoPlaying(false);
     if (currentTestimonial < maxSlides) {
       setCurrentTestimonial(currentTestimonial + 1);
     }
   };
 
   const prevTestimonial = () => {
+    setIsStoriesAutoPlaying(false);
     if (currentTestimonial > 0) {
       setCurrentTestimonial(currentTestimonial - 1);
     }
   };
 
-  if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
+  const handleStoryDotClick = (index) => {
+    setIsStoriesAutoPlaying(false);
+    setCurrentTestimonial(index);
+  };
+
+  const [skipStoriesTransition, setSkipStoriesTransition] = useState(false);
+
+  useEffect(() => {
+    if (!isStoriesAutoPlaying || maxSlides === 0) return undefined;
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => {
+        if (prev >= maxSlides) {
+          setSkipStoriesTransition(true);
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [isStoriesAutoPlaying, maxSlides]);
+
+  useEffect(() => {
+    if (!skipStoriesTransition) return undefined;
+    const id = requestAnimationFrame(() => requestAnimationFrame(() => setSkipStoriesTransition(false)));
+    return () => cancelAnimationFrame(id);
+  }, [skipStoriesTransition]);
 
   return (
     <div>
@@ -152,32 +196,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Welcome Banner */}
-      <section className="welcome-banner">
-        <div className="container">
-          <h2>Welcome to Nile Orphan Care</h2>
-        </div>
-      </section>
 
       {/* Welcome Section */}
-      <section className="welcome-section fade-in">
+      <section className="welcome-section">
         <div className="container">
-          <div className="welcome-content">
-            <div className="welcome-text-card">
-              <p className="welcome-lead">Transforming lives through compassionate care and unwavering commitment</p>
+          <div className="welcome-intro">
+            <div className="welcome-text-card fade-in-left">
+              <h2 className="section-title">Transforming lives through compassionate care</h2>
               <p>For over a decade, we have been a beacon of hope for orphaned and vulnerable children in South Sudan. Our comprehensive approach ensures every child receives the love, care, and opportunities they deserve.</p>
               <p>From emergency shelter to long-term development, we walk alongside each child on their journey to independence, providing not just basic needs but the foundation for a bright future.</p>
             </div>
 
-            <div className="mission-image">
+            <div className="mission-image fade-in-right">
               <div className="stats-image">
                 <img src="/images/welcome-to-noc.jpeg" alt="Children waving and smiling at a Nile Orphan Care community program" className="welcome-img" loading="lazy" />
                 <div className="welcome-img-overlay"></div>
                 <span className="welcome-img-caption">Community Program &middot; South Sudan</span>
               </div>
             </div>
+          </div>
 
-            <div className="core-values">
+          <div className="core-values">
               <div className="value-row">
                 <div className="value-number">01</div>
                 <div className="value-content">
@@ -220,7 +259,6 @@ const Home = () => {
                   <p>Leadership development and mentorship to help children become confident advocates</p>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </section>
@@ -228,16 +266,31 @@ const Home = () => {
       {/* The Problem Section */}
       <section className="problem-section fade-in">
         <div className="container">
-          <div className="problem-header">
-            <span className="problem-eyebrow">The Problem</span>
-            <h2 className="section-title">For millions of children, growing up is a struggle for survival.</h2>
-            <p className="problem-intro">South Sudan's children face conflict, displacement, poverty, food insecurity, and limited access to education and healthcare. Children without parental care are at even greater risk of neglect, exploitation, and being left out of school. An estimated 5 million children were affected by the crisis in 2026.</p>
-          </div>
+          <div className="problem-grid">
+            <div className="problem-header">
+              <span className="problem-eyebrow">The Problem</span>
+              <h2 className="section-title">Growing up is a fight for survival.</h2>
+              <p className="problem-intro">South Sudan's children face conflict, displacement, poverty, food insecurity, and limited access to education and healthcare. Children without parental care are at even greater risk of neglect, exploitation, and being left out of school.</p>
+            </div>
 
-          <div className="problem-stat-card">
-            <p>
-              An estimated <strong>110,000</strong> children aged 0–17 have lost one or both parents to AIDS-related causes. Today, <strong>5 million</strong> children are affected by South Sudan's humanitarian crisis. Of these, <strong>2.81 million</strong> school-aged children are out of school, nearly 65% of all school-aged children, and <strong>2.11 million</strong> children aged 6–59 months are at risk of acute malnutrition.
-            </p>
+            <div className="problem-stats">
+              <div className="problem-stat">
+                <span className="problem-stat-number">110K</span>
+                <span className="problem-stat-label">children aged 0&ndash;17 have lost one or both parents to AIDS-related causes</span>
+              </div>
+              <div className="problem-stat">
+                <span className="problem-stat-number">5M</span>
+                <span className="problem-stat-label">children affected by South Sudan's humanitarian crisis</span>
+              </div>
+              <div className="problem-stat">
+                <span className="problem-stat-number">2.81M</span>
+                <span className="problem-stat-label">school-aged children are out of school &mdash; nearly 65% of the total</span>
+              </div>
+              <div className="problem-stat">
+                <span className="problem-stat-number">2.11M</span>
+                <span className="problem-stat-label">children aged 6&ndash;59 months are at risk of acute malnutrition</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -265,7 +318,7 @@ const Home = () => {
               <button
                 type="button"
                 className="video-thumb"
-                style={{backgroundImage: `linear-gradient(rgba(13,59,102,0.35), rgba(13,59,102,0.55)), url(https://img.youtube.com/vi/${teamVideoId}/maxresdefault.jpg)`}}
+                style={{backgroundImage: `linear-gradient(rgba(20,24,29,0.35), rgba(20,24,29,0.35)), url(https://img.youtube.com/vi/${teamVideoId}/maxresdefault.jpg)`}}
                 onClick={() => setIsVideoPlaying(true)}
                 aria-label="Play video"
               >
@@ -291,7 +344,7 @@ const Home = () => {
             <div className="whatwedo-card">
               <img className="whatwedo-photo" src="/images/Education.jpeg" alt="Children from many South Sudanese tribes learning together at the Inter-Ethnic Academy" loading="lazy" />
               <h3>Inter-Ethnic Academy</h3>
-              <p>Free, unifying education where 63 of South Sudan's tribes learn side by side in the same classrooms.</p>
+              <p>Free, unifying education where 64 of South Sudan's tribes learn side by side in the same classrooms.</p>
             </div>
             <div className="whatwedo-card">
               <img className="whatwedo-photo" src="https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
@@ -327,20 +380,32 @@ const Home = () => {
 
           <div className="impact-glance-list">
             <div className="impact-glance-item">
-              <span className="impact-glance-number"><CountUpNumber value="620" delay={0} /></span>
-              <p className="impact-glance-label">Children fed daily through our nutrition programs.</p>
+              <span className="impact-glance-icon" aria-hidden="true"><Utensils size={22} /></span>
+              <div className="impact-glance-body">
+                <span className="impact-glance-number"><CountUpNumber value="620" delay={0} /></span>
+                <p className="impact-glance-label">Children fed daily through our nutrition programs.</p>
+              </div>
             </div>
             <div className="impact-glance-item">
-              <span className="impact-glance-number"><CountUpNumber value="24/7" delay={150} /></span>
-              <p className="impact-glance-label">Medical coverage available to children in our care.</p>
+              <span className="impact-glance-icon" aria-hidden="true"><HeartPulse size={22} /></span>
+              <div className="impact-glance-body">
+                <span className="impact-glance-number"><CountUpNumber value="24/7" delay={150} /></span>
+                <p className="impact-glance-label">Medical coverage available to children in our care.</p>
+              </div>
             </div>
             <div className="impact-glance-item">
-              <span className="impact-glance-number"><CountUpNumber value="63" delay={300} /></span>
-              <p className="impact-glance-label">Tribes united across our programs and communities.</p>
+              <span className="impact-glance-icon" aria-hidden="true"><Users size={22} /></span>
+              <div className="impact-glance-body">
+                <span className="impact-glance-number"><CountUpNumber value="64" delay={300} /></span>
+                <p className="impact-glance-label">Tribes united across our programs and communities.</p>
+              </div>
             </div>
             <div className="impact-glance-item">
-              <span className="impact-glance-number"><CountUpNumber value="100%" delay={450} /></span>
-              <p className="impact-glance-label">Clean water access for every child we support.</p>
+              <span className="impact-glance-icon" aria-hidden="true"><Droplet size={22} /></span>
+              <div className="impact-glance-body">
+                <span className="impact-glance-number"><CountUpNumber value="100%" delay={450} /></span>
+                <p className="impact-glance-label">Clean water access for every child we support.</p>
+              </div>
             </div>
           </div>
 
@@ -351,16 +416,17 @@ const Home = () => {
       </section>
 
       {/* Why We Exist Section */}
-      <section className="why-exist-section fade-in">
+      <section className="why-exist-section">
         <div className="container">
           <div className="why-exist-content">
-            <div className="why-exist-text">
-              <h2>Why Nile Orphan Care Exists</h2>
+            <div className="why-exist-text fade-in-left">
+              <h2 className="section-title">Why Nile Orphan Care Exists</h2>
               <p>Across communities along the Nile, many children are left vulnerable due to poverty, conflict, disease, and displacement. Without intervention, these children face limited access to education, healthcare, and emotional support, putting their futures at risk.</p>
-              <p>Nile Orphan Care was founded to break this cycle. We believe that every child deserves safety, education, and the chance to dream. Our mission is not just to care for children, but to empower them to thrive as independent, confident adults. <Link to="/programs">See how our programs support children in South Sudan</Link>.</p>
+              <p>Nile Orphan Care was founded to break this cycle. We believe that every child deserves safety, education, and the chance to dream. Our mission is not just to care for children, but to empower them to thrive as independent, confident adults.</p>
+              <Link to="/programs" className="why-exist-link">See our programs &rarr;</Link>
             </div>
-            <div className="why-exist-image">
-              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Children in a South Sudanese community supported by Nile Orphan Care" loading="lazy" />
+            <div className="why-exist-image fade-in-right">
+              <img src="/images/child.jpeg" alt="Children in a South Sudanese community supported by Nile Orphan Care" loading="lazy" />
             </div>
           </div>
         </div>
@@ -400,16 +466,6 @@ const Home = () => {
               <p>Building confidence and self-reliance so children become leaders in their communities.</p>
             </div>
           </div>
-          
-          <div className="ticker-container">
-            <div className="ticker">
-              <div className="ticker-content">
-                <span>Our goal is simple: to raise children who are not only supported, but empowered.</span>
-                <span>Our goal is simple: to raise children who are not only supported, but empowered.</span>
-                <span>Our goal is simple: to raise children who are not only supported, but empowered.</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -427,7 +483,14 @@ const Home = () => {
           </div>
 
           <div className="stories-carousel">
-            <div className="stories-track" style={{transform: window.innerWidth <= 768 ? `translateX(-${currentTestimonial * 340}px)` : `translateX(-${currentTestimonial * 380}px)`}}>
+            <div
+              ref={storiesTrackRef}
+              className="stories-track"
+              style={{
+                transform: `translateX(-${storyTrackOffset}px)`,
+                transition: skipStoriesTransition ? 'none' : undefined,
+              }}
+            >
               {childStories.map((story, index) => (
                 <div key={index} className="story-card">
                   <div className="story-image">
@@ -440,35 +503,38 @@ const Home = () => {
                       <strong>{story.name}</strong>
                       <span>{story.subtitle}</span>
                     </div>
-                    <Link to="/our-impact#stories" className="story-read-link">Read {story.name.split(' ')[0]}'s story &rarr;</Link>
                   </div>
                 </div>
               ))}
             </div>
-            
+
             <div className="stories-navigation">
               <button className="nav-btn prev" onClick={prevTestimonial} disabled={currentTestimonial === 0}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <polyline points="15,18 9,12 15,6"/>
                 </svg>
               </button>
-              
+
               <div className="stories-dots">
                 {Array.from({length: maxSlides + 1}).map((_, index) => (
-                  <button 
+                  <button
                     key={index}
                     className={`story-dot ${currentTestimonial === index ? 'active' : ''}`}
-                    onClick={() => setCurrentTestimonial(index)}
+                    onClick={() => handleStoryDotClick(index)}
                   />
                 ))}
               </div>
-              
+
               <button className="nav-btn next" onClick={nextTestimonial} disabled={currentTestimonial === maxSlides}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <polyline points="9,18 15,12 9,6"/>
                 </svg>
               </button>
             </div>
+          </div>
+
+          <div className="stories-cta">
+            <Link to="/our-impact#stories" className="why-exist-link">View all children's stories &rarr;</Link>
           </div>
         </div>
       </section>
@@ -609,7 +675,7 @@ const Home = () => {
       </section>
 
       <DonorCTA
-        heading="We care about the future of South Sudan's children. So can you."
+        heading="South Sudan's children need you."
         subheading="Help turn care into opportunity."
         body="Every child deserves the chance to grow up safe, healthy, educated, and hopeful. Your support helps Nile Orphan Care give vulnerable children the foundation they need to build a better future."
         primaryLabel="Donate Today"
