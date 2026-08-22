@@ -55,14 +55,14 @@ const About = () => {
         "Dave finds deep joy in watching God glorified through the development, protection, and nurturing of \"the least of these.\" His favorite scripture, \"I can do all things through Christ who strengthens me,\" anchors his work and fuels his calling."
       ]
     },
-    { name: "Ted Miller", title: "Vice President", image: "/board/Ted-new.jpg" },
-    { name: "Tom Cox", title: "Board Member", image: "/board/tom_cox.webp" },
+    { name: "Ted Miller", title: "Vice President", image: "/board/ted-meredith.jpg" },
+    { name: "Tom Cox", title: "Board Member", image: "/board/tom_cox.webp", imageFit: "contain" },
     { name: "Evan Nord", title: "Board Member", image: "/board/Evan.webp", imagePosition: "center 20%" },
     { name: "Jerry Smith", title: "Board Member" },
     { name: "Kristy Robison", title: "Board Member", image: "/board/Kristy-Robison.jpeg" },
     { name: "Joanne Keifer", title: "Treasurer", image: "/board/Joane.webp" },
     { name: "Susan Albert", title: "Secretary", image: "/board/Susan.webp" },
-    { name: "Meredith Miller", title: "Education Consultant", image: "/board/Meredith.jpg" }
+    { name: "Meredith Miller", title: "Education Consultant", image: "/board/ted-meredith.jpg" }
   ];
 
   const southSudanBoardMembers = [
