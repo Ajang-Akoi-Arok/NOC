@@ -30,7 +30,7 @@ const About = () => {
     return () => observer.disconnect();
   }, [location]);
 
-  const boardMembers = [
+  const usaBoardMembers = [
     {
       name: "John Deng Ater",
       title: "Founder and Executive Director",
@@ -45,7 +45,7 @@ const About = () => {
     },
     {
       name: "Dave Albert",
-      title: "President - Board",
+      title: "President",
       image: "/board/Dave.jpeg",
       imageFit: "contain",
       subtitle: "Dave Albert, President of Nile Orphan Care",
@@ -55,10 +55,23 @@ const About = () => {
         "Dave finds deep joy in watching God glorified through the development, protection, and nurturing of \"the least of these.\" His favorite scripture, \"I can do all things through Christ who strengthens me,\" anchors his work and fuels his calling."
       ]
     },
-    { name: "Hon. Anne Lino Abyei", title: "Deputy Board Chair", image: "/board/Anne-Lino.jpeg", imagePosition: "center 15%" },
-    { name: "Ted Miller", title: "Vice President", image: "/board/ted-meredith.jpg" },
-    { name: "Kristy Robison", title: "Board Member - Farming God's Way Consultation", image: "/board/Kristy-Robison.jpeg" },
-    { name: "Meredith Miller", title: "Education Consultant", image: "/board/ted-meredith.jpg" }
+    { name: "Ted Miller", title: "Vice President", image: "/board/Ted-new.jpg" },
+    { name: "Tom Cox", title: "Board Member", image: "/board/tom_cox.webp" },
+    { name: "Evan Nord", title: "Board Member", image: "/board/Evan.webp", imagePosition: "center 20%" },
+    { name: "Jerry Smith", title: "Board Member" },
+    { name: "Kristy Robison", title: "Board Member", image: "/board/Kristy-Robison.jpeg" },
+    { name: "Joanne Keifer", title: "Treasurer", image: "/board/Joane.webp" },
+    { name: "Susan Albert", title: "Secretary", image: "/board/Susan.webp" },
+    { name: "Meredith Miller", title: "Education Consultant", image: "/board/Meredith.jpg" }
+  ];
+
+  const southSudanBoardMembers = [
+    { name: "Archbishop Alapayo Manyang Kuctiel", title: "Board Chair" },
+    { name: "Hon. Anne Lino Abyei", title: "Deputy Chair", image: "/board/Anne-Lino.jpeg", imagePosition: "center 15%" },
+    { name: "Hon. Chan Ali Malou", title: "Board Member" },
+    { name: "Dr. Yath Awan Yath", title: "Board Member" },
+    { name: "Sultan Deng Majok", title: "Board Member" },
+    { name: "Angeth Acol De Dut", title: "HR and Board Member" }
   ];
 
 
@@ -223,19 +236,26 @@ const About = () => {
             <p>Meet the dedicated leaders who guide our mission and ensure our commitment to transforming lives</p>
           </div>
           
+          <h3 className="board-group-title">United States</h3>
           <div className="board-grid">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="board-member">
+            {usaBoardMembers.map((member, index) => (
+              <div key={`usa-${index}`} className="board-member">
                 <div className="member-photo">
-                  <img
-                    src={member.image}
-                    alt={`${member.name}, ${member.title}`}
-                    loading="lazy"
-                    style={{
-                      ...(member.imagePosition ? { objectPosition: member.imagePosition } : {}),
-                      ...(member.imageFit ? { objectFit: member.imageFit } : {})
-                    }}
-                  />
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={`${member.name}, ${member.title}`}
+                      loading="lazy"
+                      style={{
+                        ...(member.imagePosition ? { objectPosition: member.imagePosition } : {}),
+                        ...(member.imageFit ? { objectFit: member.imageFit } : {})
+                      }}
+                    />
+                  ) : (
+                    <div className="member-photo-placeholder" aria-hidden="true">
+                      {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    </div>
+                  )}
                 </div>
                 <div className="member-info">
                   <h3>{member.name}</h3>
@@ -245,12 +265,12 @@ const About = () => {
                       <button
                         type="button"
                         className="member-bio-toggle"
-                        onClick={() => setExpandedMember(expandedMember === index ? null : index)}
-                        aria-expanded={expandedMember === index}
+                        onClick={() => setExpandedMember(expandedMember === `usa-${index}` ? null : `usa-${index}`)}
+                        aria-expanded={expandedMember === `usa-${index}`}
                       >
-                        {expandedMember === index ? 'Hide bio' : 'Read bio'}
+                        {expandedMember === `usa-${index}` ? 'Hide bio' : 'Read bio'}
                       </button>
-                      {expandedMember === index && (
+                      {expandedMember === `usa-${index}` && (
                         <div className="member-bio">
                           {member.subtitle && <p className="member-bio-subtitle">{member.subtitle}</p>}
                           {member.bio.map((paragraph, i) => (
@@ -260,6 +280,35 @@ const About = () => {
                       )}
                     </>
                   )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="board-group-title">South Sudan</h3>
+          <div className="board-grid">
+            {southSudanBoardMembers.map((member, index) => (
+              <div key={`ss-${index}`} className="board-member">
+                <div className="member-photo">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={`${member.name}, ${member.title}`}
+                      loading="lazy"
+                      style={{
+                        ...(member.imagePosition ? { objectPosition: member.imagePosition } : {}),
+                        ...(member.imageFit ? { objectFit: member.imageFit } : {})
+                      }}
+                    />
+                  ) : (
+                    <div className="member-photo-placeholder" aria-hidden="true">
+                      {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    </div>
+                  )}
+                </div>
+                <div className="member-info">
+                  <h3>{member.name}</h3>
+                  <p>{member.title}</p>
                 </div>
               </div>
             ))}
