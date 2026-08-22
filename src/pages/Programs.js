@@ -8,7 +8,7 @@ const Programs = () => {
   return (
     <div className="programs-page">
       <SEO
-        title="Our Programs | Education & Child Protection"
+        title="Our Programs | Education and Child Protection"
         description="Explore Nile Orphan Care's programs for children in South Sudan, including education, healthcare, nutrition, vocational training, and family-style child protection."
         path="/programs"
       />
@@ -16,7 +16,7 @@ const Programs = () => {
       <section id="hero" className="programs-hero">
         <div className="hero-container">
           <div className="hero-content">
-            <AnimatedHeroText as="h1" text="Our Programs & Initiatives" startDelay={0.15} />
+            <AnimatedHeroText as="h1" text="Our Programs and Initiatives" startDelay={0.15} />
             <AnimatedHeroText as="p" text="Comprehensive support that nurtures every child's growth." startDelay={0.55} />
           </div>
         </div>
@@ -49,7 +49,7 @@ const Programs = () => {
                 photo: '/images/inter-ethnic.jpg',
                 alt: "Children from many South Sudanese tribes learning together at the Inter-Ethnic Academy",
                 title: 'Inter-Ethnic Academy',
-                tag: 'Primary & Secondary Education',
+                tag: 'Primary and Secondary Education',
                 description: "Addressing South Sudan's tribal divisions through education. With 63 of the 64 tribes represented in our student body, we demonstrate that unity is possible through shared learning and the Gospel's unifying power.",
               },
               {
@@ -57,7 +57,7 @@ const Programs = () => {
                 alt: "Cultivated farmland representing the Daalbaai Agriculture program's fields",
                 title: 'Daalbaai Agriculture',
                 tag: 'Sustainable Farming',
-                description: '"Happiness is a result of availability of food" — this program promotes indigenous food production, using South Sudan\'s fertile land and abundant rainfall to reduce dependency on international aid.',
+                description: '"Happiness is a result of availability of food": this program promotes indigenous food production, using South Sudan\'s fertile land and abundant rainfall to reduce dependency on international aid.',
               },
               {
                 photo: '/images/food.jpeg',
@@ -70,20 +70,20 @@ const Programs = () => {
                 photo: '/images/Health.jpeg',
                 alt: 'Mobile health clinic providing medical care to children',
                 title: 'Partners for Compassionate Care (PCC)',
-                tag: 'Medical Care & Health Education',
+                tag: 'Medical Care and Health Education',
                 description: 'Over the past 24 months, PCC has established and operated our on-site clinic, ensuring immediate healthcare access with a full-time nurse providing coverage five days a week.',
               },
               {
                 photo: '/images/hero-1.jpeg',
                 alt: 'Community teaching session at a Nile Orphan Care program',
                 title: 'Discipleship Global (DG)',
-                tag: 'Discipleship & Biblical Training',
+                tag: 'Discipleship and Biblical Training',
                 description: 'Training children to be disciples who make disciples using the Paul and Timothy biblical method, fostering deeper, lived relationships with Jesus Christ through relational mentoring.',
               },
               {
                 photo: '/images/child.jpeg',
                 alt: 'Child supported through Nile Orphan Care programs',
-                title: 'Technical & Vocational Training',
+                title: 'Technical and Vocational Training',
                 tag: 'Skills Development',
                 description: 'Empowering children with practical skills for economic independence. This program bridges the gap between education and employment, providing pathways to sustainable livelihoods.',
               },
@@ -147,9 +147,9 @@ const Programs = () => {
           <div className="initiatives-grid">
             {[
               {
-                title: 'Clean Water & WASH',
+                title: 'Clean Water and WASH',
                 badge: 'Deep Water Well Complete',
-                body: "Clean water is only second to the Living Water! Our solar water system provides safe, clean water for drinking and agriculture, while Water Step equipment enables water treatment and sanitation — saving lives daily from waterborne diseases like cholera and diarrhea, leading causes of child mortality in South Sudan.",
+                body: "Clean water is only second to the Living Water! Our solar water system provides safe, clean water for drinking and agriculture, while Water Step equipment enables water treatment and sanitation, saving lives daily from waterborne diseases like cholera and diarrhea, leading causes of child mortality in South Sudan.",
               },
               {
                 title: 'Food Security',
@@ -169,7 +169,7 @@ const Programs = () => {
               {
                 title: 'Mission Outreach',
                 badge: 'Community Impact',
-                body: '"Children of the Beautiful Savior" — our children share God\'s love in the community, demonstrating Christ\'s love through action while respecting the dignity and beliefs of every person, regardless of tribe or background.',
+                body: '"Children of the Beautiful Savior": our children share God\'s love in the community, demonstrating Christ\'s love through action while respecting the dignity and beliefs of every person, regardless of tribe or background.',
               },
               {
                 title: 'Health Education',

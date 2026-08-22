@@ -284,7 +284,7 @@ const Home = () => {
               </div>
               <div className="problem-stat">
                 <span className="problem-stat-number">2.81M</span>
-                <span className="problem-stat-label">school-aged children are out of school &mdash; nearly 65% of the total</span>
+                <span className="problem-stat-label">school-aged children are out of school, nearly 65% of the total</span>
               </div>
               <div className="problem-stat">
                 <span className="problem-stat-number">2.11M</span>
@@ -358,7 +358,7 @@ const Home = () => {
             </div>
             <div className="whatwedo-card">
               <img className="whatwedo-photo" src="/images/food.jpeg" alt="Child participating in Nile Orphan Care's nutrition program" loading="lazy" />
-              <h3>Nutrition & Food Security</h3>
+              <h3>Nutrition and Food Security</h3>
               <p>Regular meals and food support to protect children from hunger and acute malnutrition.</p>
             </div>
           </div>
@@ -454,7 +454,7 @@ const Home = () => {
               <p>From early learning to higher education, ensuring every child reaches their academic potential.</p>
             </div>
             <div className="approach-item fade-in">
-              <h3>Health & Wellness</h3>
+              <h3>Health and Wellness</h3>
               <p>Comprehensive healthcare, nutrition programs, and wellness support for optimal development.</p>
             </div>
             <div className="approach-item fade-in">
@@ -543,7 +543,7 @@ const Home = () => {
       <section id="news-section" className="news-section fade-in">
         <div className="container">
           <div className="news-header">
-            <h2 className="section-title">Latest News & Updates</h2>
+            <h2 className="section-title">Latest News and Updates</h2>
             <p className="news-subtitle">Stay informed about our ongoing programs, achievements, and community impact stories.</p>
           </div>
           
@@ -649,7 +649,7 @@ const Home = () => {
       <section className="trust-section fade-in">
         <div className="container">
           <div className="trust-header">
-            <h2 className="section-title">Transparency & Accountability</h2>
+            <h2 className="section-title">Transparency and Accountability</h2>
             <p className="trust-subtitle">We are committed to responsible stewardship and transparency. Every donation is carefully managed to maximize impact and ensure children receive the support they need.</p>
           </div>
           

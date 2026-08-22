@@ -33,7 +33,7 @@ const About = () => {
   const boardMembers = [
     {
       name: "John Deng Ater",
-      title: "Founder & Executive Director",
+      title: "Founder and Executive Director",
       image: "/board/John.jpg",
       imagePosition: "center 15%",
       subtitle: "Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care",
@@ -51,7 +51,7 @@ const About = () => {
       subtitle: "Dave Albert, President of Nile Orphan Care",
       bio: [
         "Dave Albert serves as President of Nile Orphan Care, bringing 38 years of business-development leadership from a Fortune 500 career into a ministry grounded in Christlike compassion and practical impact.",
-        "He is committed to living out the two great commands—to love the Lord your God and love your neighbor as yourself. That commitment shapes both the in-country team and the U.S. team, who work together to care for vulnerable children and elevate communities in South Sudan.",
+        "He is committed to living out the two great commands, to love the Lord your God and love your neighbor as yourself. That commitment shapes both the in-country team and the U.S. team, who work together to care for vulnerable children and elevate communities in South Sudan.",
         "Dave finds deep joy in watching God glorified through the development, protection, and nurturing of \"the least of these.\" His favorite scripture, \"I can do all things through Christ who strengthens me,\" anchors his work and fuels his calling."
       ]
     },
@@ -96,11 +96,11 @@ const About = () => {
         <div className="container">
           <span className="problem-eyebrow">Who We Are</span>
           <h2 className="section-title">A family for South Sudan's most vulnerable children</h2>
-          <p className="problem-intro">Nile Orphan Care is a faith-driven organization walking alongside orphaned, abandoned and at-risk children across South Sudan. What began as a single scholarship program in 2011 has grown into a family of care providing shelter, education, healthcare and nutrition — so every child we serve has the chance to grow up safe, loved and hopeful about the future.</p>
+          <p className="problem-intro">Nile Orphan Care is a faith-driven organization walking alongside orphaned, abandoned and at-risk children across South Sudan. What began as a single scholarship program in 2011 has grown into a family of care providing shelter, education, healthcare and nutrition, so every child we serve has the chance to grow up safe, loved and hopeful about the future.</p>
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
+      {/* Mission and Vision Section */}
       <section id="mission-vision" className="mission-vision-section animate-on-scroll">
         <div className="container">
           <div className="mission-vision-grid">
@@ -128,7 +128,7 @@ const About = () => {
       <section className="john-story-section animate-on-scroll">
         <div className="container">
           <div className="story-header">
-            <h2 className="section-title">Meet John</h2>
+            <h2 className="section-title">Meet our founder John</h2>
           </div>
           <div className="john-story-body">
             <img className="john-image-float" src="/board/John.jpg" alt="Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care" loading="lazy" />

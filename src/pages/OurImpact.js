@@ -56,7 +56,7 @@ const OurImpact = () => {
   return (
     <div className="our-impact-page">
       <SEO
-        title="Our Story & Impact | Nile Orphan Care"
+        title="Our Story and Impact | Nile Orphan Care"
         description="Read the story behind Nile Orphan Care and see the measurable impact we're making for orphaned and vulnerable children in South Sudan."
         path="/our-impact"
       />
@@ -64,7 +64,7 @@ const OurImpact = () => {
       <section id="hero" className="contact-hero impact-hero">
         <div className="hero-container">
           <div className="hero-content">
-            <AnimatedHeroText as="h1" text="Our Story & Impact" startDelay={0.15} />
+            <AnimatedHeroText as="h1" text="Our Story and Impact" startDelay={0.15} />
             <AnimatedHeroText as="p" text="Where we came from, and the difference we're making." startDelay={0.5} />
           </div>
         </div>

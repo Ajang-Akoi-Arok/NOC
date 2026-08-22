@@ -72,7 +72,7 @@ export const childStories = [
       "She hails from a family of six siblings in Lakes State. Nyibol lost her father at age six during the South Sudan civil war in 2013.",
       "Her mother was inherited by an uncle according to Dinka custom. Three of her older sisters were forced into marriage by relatives as teenagers between 2014 and 2017.",
       "Her mother protested this early and forced marriage of her children but was constantly abused by the relatives until she suffered an elbow fracture, which paralyzed her right arm. As a result of this disability, and the need to protect Nyibol and her other siblings from early marriage, she decided to send Nyibol to her elder sister's home in 2018.",
-      "Life at her elder sister's home was terrible; she was constantly mistreated and bullied by the relatives of her sister's husband. She used to wash all the clothes and was often insulted and beaten. When the husband of her elder sister married a new wife, things began to change for the worst — there was insufficient food, constant quarrels between the co-wives, and Nyibol barely had clothes. She was brought to NOC in 2019 by her elder sister."
+      "Life at her elder sister's home was terrible; she was constantly mistreated and bullied by the relatives of her sister's husband. She used to wash all the clothes and was often insulted and beaten. When the husband of her elder sister married a new wife, things began to change for the worst: there was insufficient food, constant quarrels between the co-wives, and Nyibol barely had clothes. She was brought to NOC in 2019 by her elder sister."
     ]
   },
   {
@@ -108,7 +108,7 @@ export const childStories = [
       "Ayen is a 14 year old girl in Primary 7. She is one of the brightest girls, leading her class every year.",
       "Her father was a soldier who left the army due to economic crisis to support his family as a charcoal seller, but was sadly killed in the 2016 civil war.",
       "This affected Ayen and her two siblings; her widowed mother struggled to raise the children, cutting charcoal and selling firewood to get by. When the security situation deteriorated in 2018, the business failed and the family struggled to survive. This situation forced the then 10-year-old Ayen onto the street.",
-      "She described the experience on the street as terrible — not enough food, no clothes, no shelter. Ayen was identified and brought to the orphanage in 2018 by volunteer Deng William.",
+      "She described the experience on the street as terrible: not enough food, no clothes, no shelter. Ayen was identified and brought to the orphanage in 2018 by volunteer Deng William.",
       "Ayen does not know the whereabouts of her mother and her other two siblings."
     ]
   },

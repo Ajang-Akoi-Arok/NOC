@@ -93,10 +93,10 @@ const Contact = () => {
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
-                    <option value="donation">Donation & Support</option>
+                    <option value="donation">Donation and Support</option>
                     <option value="volunteer">Volunteer Opportunities</option>
                     <option value="partnership">Partnership</option>
-                    <option value="media">Media & Press</option>
+                    <option value="media">Media and Press</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

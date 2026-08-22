@@ -10,7 +10,7 @@ const GetInvolved = () => {
     <div className="get-involved-page">
       <SEO
         title="Get Involved | Nile Orphan Care"
-        description="Discover the many ways to support Nile Orphan Care — donate, volunteer, partner with us, spread awareness, give monthly, or leave a legacy gift."
+        description="Discover the many ways to support Nile Orphan Care: donate, volunteer, partner with us, spread awareness, give monthly, or leave a legacy gift."
         path="/get-involved"
       />
       {/* Hero Section */}
@@ -70,7 +70,7 @@ const GetInvolved = () => {
               },
               {
                 title: 'Partner With Us',
-                badge: 'Corporate & church',
+                badge: 'Corporate and church',
                 body: 'Employee giving programs, matching gifts, facility sponsorships, mission trips, we build partnerships around what your organization already does well and cares about.',
               },
               {
