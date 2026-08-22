@@ -57,12 +57,8 @@ const About = () => {
     },
     { name: "Hon. Anne Lino Abyei", title: "Deputy Board Chair", image: "/board/Anne-Lino.jpeg", imagePosition: "center 15%" },
     { name: "Ted Miller", title: "Vice President", image: "/board/ted-meredith.jpg" },
-    { name: "Susan Albert", title: "Secretary", image: "/board/Susan.webp" },
-    { name: "Joanne Keifer", title: "Treasurer - Volunteer", image: "/board/Joane.webp" },
-    { name: "Tom Cox", title: "Board Member", image: "/board/tom_cox.webp" },
-    { name: "Steve Roberts", title: "Committee Member", image: "/board/Steve_Roberts.webp" },
-    { name: "Meredith Miller", title: "Education Consultant", image: "/board/ted-meredith.jpg" },
-    { name: "Evan Nord", title: "Board Member - Construction Committee", image: "/board/Evan.webp", imagePosition: "center 20%" }
+    { name: "Kristy Robison", title: "Board Member - Farming God's Way Consultation", image: "/board/Kristy-Robison.jpeg" },
+    { name: "Meredith Miller", title: "Education Consultant", image: "/board/ted-meredith.jpg" }
   ];
 
 
