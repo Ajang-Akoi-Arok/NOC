@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../config/seo';
@@ -7,6 +7,7 @@ import AnimatedHeroText from '../components/AnimatedHeroText';
 
 const About = () => {
   const location = useLocation();
+  const [expandedMember, setExpandedMember] = useState(null);
 
   useEffect(() => {
     // Add scroll animation observer
@@ -30,14 +31,37 @@ const About = () => {
   }, [location]);
 
   const boardMembers = [
-    { name: "John Deng Ater", title: "Founder & Executive Director", image: "/board/John-3.webp", imagePosition: "center 15%" },
-    { name: "Dave Albert", title: "President - Board", image: "/board/Dave.webp", imagePosition: "center 15%" },
-    { name: "Ted Miller", title: "Board Vice President", image: "/board/Ted.webp" },
+    {
+      name: "John Deng Ater",
+      title: "Founder & Executive Director",
+      image: "/board/John.jpg",
+      imagePosition: "center 15%",
+      subtitle: "Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care",
+      bio: [
+        "\"Growing up during the Sudanese civil war, I experienced loss and displacement at an early age. I lost my father when I was eight years old, and for many years refugee camps became my home, first in Uganda and later in Kenya. During that time, I saw children and families struggle with hunger, poverty, disease, and limited access to education.",
+        "Those experiences shaped the way I see the world. Through every hardship, my faith in God gave me strength and taught me the importance of compassion and service. I came to believe that no child should be left without care, hope, or the opportunity to build a better future simply because of the circumstances into which they were born.",
+        "That belief led me to found Nile Orphan Care. My vision is to restore hope for orphaned and vulnerable children in South Sudan by providing care, education, protection, and opportunities to develop the skills they need for the future. I believe that when we invest in a child today, we help build a stronger and more hopeful South Sudan tomorrow.\""
+      ]
+    },
+    {
+      name: "Dave Albert",
+      title: "President - Board",
+      image: "/board/Dave.jpeg",
+      imageFit: "contain",
+      subtitle: "Dave Albert, President of Nile Orphan Care",
+      bio: [
+        "Dave Albert serves as President of Nile Orphan Care, bringing 38 years of business-development leadership from a Fortune 500 career into a ministry grounded in Christlike compassion and practical impact.",
+        "He is committed to living out the two great commands—to love the Lord your God and love your neighbor as yourself. That commitment shapes both the in-country team and the U.S. team, who work together to care for vulnerable children and elevate communities in South Sudan.",
+        "Dave finds deep joy in watching God glorified through the development, protection, and nurturing of \"the least of these.\" His favorite scripture, \"I can do all things through Christ who strengthens me,\" anchors his work and fuels his calling."
+      ]
+    },
+    { name: "Hon. Anne Lino Abyei", title: "Deputy Board Chair", image: "/board/Anne-Lino.jpeg", imagePosition: "center 15%" },
+    { name: "Ted Miller", title: "Vice President", image: "/board/ted-meredith.jpg" },
     { name: "Susan Albert", title: "Secretary", image: "/board/Susan.webp" },
     { name: "Joanne Keifer", title: "Treasurer - Volunteer", image: "/board/Joane.webp" },
     { name: "Tom Cox", title: "Board Member", image: "/board/tom_cox.webp" },
     { name: "Steve Roberts", title: "Committee Member", image: "/board/Steve_Roberts.webp" },
-    { name: "Meredith Miller", title: "Committee - Education", image: "/board/miller.webp" },
+    { name: "Meredith Miller", title: "Education Consultant", image: "/board/ted-meredith.jpg" },
     { name: "Evan Nord", title: "Board Member - Construction Committee", image: "/board/Evan.webp", imagePosition: "center 20%" }
   ];
 
@@ -57,7 +81,7 @@ const About = () => {
         }}
       />
       {/* Hero Section */}
-      <section className="about-hero">
+      <section id="hero" className="about-hero">
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
@@ -107,12 +131,12 @@ const About = () => {
             <h2 className="section-title">Meet John</h2>
           </div>
           <div className="john-story-body">
-            <img className="john-image-float" src="/board/John-3.webp" alt="Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care" loading="lazy" />
-            <p>John, founder of NOC, believes that the only one who kept him alive during the civil war was not his widow mother, but GOD ALONE. He was present in these times of trouble. Since he accepted Christ as his personal Savior at age 6, he remains a devoted Christian in His service.</p>
+            <img className="john-image-float" src="/board/John.jpg" alt="Rev. John Deng Ater, Founder and Executive Director of Nile Orphan Care" loading="lazy" />
+            <p>"Growing up during the Sudanese civil war, I experienced loss and displacement at an early age. I lost my father when I was eight years old, and for many years refugee camps became my home, first in Uganda and later in Kenya. During that time, I saw children and families struggle with hunger, poverty, disease, and limited access to education.</p>
 
-            <p>In 2011, Rev. John Deng Ater took a mission trip to then autonomous Southern Sudan, which later seceded from Sudan and became the independent Republic of South Sudan on July 9, 2011 after decades of African's longest civil war that claimed millions of lives. The heart-rending stories from orphaned, street and abandoned children compelled Rev. Ater to initiate the Orphans' Scholarship Program. The goal was to provide financial assistance for education and care to South Sudanese orphaned, street, abandoned and at-risk children who are living in refugee camps (Kenya and Uganda).</p>
+            <p>Those experiences shaped the way I see the world. Through every hardship, my faith in God gave me strength and taught me the importance of compassion and service. I came to believe that no child should be left without care, hope, or the opportunity to build a better future simply because of the circumstances into which they were born.</p>
 
-            <p>In 2013, the program was extended to South Sudan with its first headquarters located in Yei, Central Equatorial State. But, following a political crisis in 2016, Yei was seriously affected and left with no access to humanitarian aid and other means of survival. As insecurity intensified, the organization was left with no choice but to evacuate children along with their caretakers to Juba, the place now considered to be home for these disadvantaged children.</p>
+            <p>That belief led me to found Nile Orphan Care. My vision is to restore hope for orphaned and vulnerable children in South Sudan by providing care, education, protection, and opportunities to develop the skills they need for the future. I believe that when we invest in a child today, we help build a stronger and more hopeful South Sudan tomorrow."</p>
 
             <div className="scripture-quote">
               <blockquote>
@@ -211,12 +235,35 @@ const About = () => {
                     src={member.image}
                     alt={`${member.name}, ${member.title}`}
                     loading="lazy"
-                    style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+                    style={{
+                      ...(member.imagePosition ? { objectPosition: member.imagePosition } : {}),
+                      ...(member.imageFit ? { objectFit: member.imageFit } : {})
+                    }}
                   />
                 </div>
                 <div className="member-info">
                   <h3>{member.name}</h3>
                   <p>{member.title}</p>
+                  {member.bio && (
+                    <>
+                      <button
+                        type="button"
+                        className="member-bio-toggle"
+                        onClick={() => setExpandedMember(expandedMember === index ? null : index)}
+                        aria-expanded={expandedMember === index}
+                      >
+                        {expandedMember === index ? 'Hide bio' : 'Read bio'}
+                      </button>
+                      {expandedMember === index && (
+                        <div className="member-bio">
+                          {member.subtitle && <p className="member-bio-subtitle">{member.subtitle}</p>}
+                          {member.bio.map((paragraph, i) => (
+                            <p key={i}>{paragraph}</p>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             ))}

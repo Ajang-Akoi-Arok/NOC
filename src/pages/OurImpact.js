@@ -61,7 +61,7 @@ const OurImpact = () => {
         path="/our-impact"
       />
       {/* Hero Section */}
-      <section className="contact-hero impact-hero">
+      <section id="hero" className="contact-hero impact-hero">
         <div className="hero-container">
           <div className="hero-content">
             <AnimatedHeroText as="h1" text="Our Story & Impact" startDelay={0.15} />

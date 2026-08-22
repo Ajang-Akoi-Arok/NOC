@@ -13,7 +13,7 @@ const Programs = () => {
         path="/programs"
       />
       {/* Hero Section */}
-      <section className="programs-hero">
+      <section id="hero" className="programs-hero">
         <div className="hero-container">
           <div className="hero-content">
             <AnimatedHeroText as="h1" text="Our Programs & Initiatives" startDelay={0.15} />
@@ -46,14 +46,14 @@ const Programs = () => {
           <div className="programs-grid">
             {[
               {
-                photo: '/images/Education.jpeg',
+                photo: '/images/inter-ethnic.jpg',
                 alt: "Children from many South Sudanese tribes learning together at the Inter-Ethnic Academy",
                 title: 'Inter-Ethnic Academy',
                 tag: 'Primary & Secondary Education',
                 description: "Addressing South Sudan's tribal divisions through education. With 63 of the 64 tribes represented in our student body, we demonstrate that unity is possible through shared learning and the Gospel's unifying power.",
               },
               {
-                photo: 'https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                photo: '/images/daalbaai.jpg',
                 alt: "Cultivated farmland representing the Daalbaai Agriculture program's fields",
                 title: 'Daalbaai Agriculture',
                 tag: 'Sustainable Farming',
@@ -112,7 +112,7 @@ const Programs = () => {
 
           <div className="spotlight-block">
             <div className="spotlight-image">
-              <img src="https://images.unsplash.com/flagged/photo-1579133311477-9121405c78dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Students of the Inter-Ethnic Academy raising their hands in class" loading="lazy" />
+              <img src="/images/inter-ethnic.jpg" alt="Students of the Inter-Ethnic Academy gathered together on campus" loading="lazy" />
             </div>
             <div className="spotlight-text">
               <h3>Inter-Ethnic Academy: Where 63 Tribes Learn as One</h3>
@@ -124,7 +124,7 @@ const Programs = () => {
 
           <div className="spotlight-block reverse">
             <div className="spotlight-image">
-              <img src="https://images.unsplash.com/photo-1741874299706-2b8e16839aaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="A farmer tending crops in a field, representing the Daalbaai Agriculture program" loading="lazy" />
+              <img src="/images/daalbaai.jpg" alt="A farmer tending crops in a field, representing the Daalbaai Agriculture program" loading="lazy" />
             </div>
             <div className="spotlight-text">
               <h3>Daalbaai Agriculture: Growing Food Independence</h3>

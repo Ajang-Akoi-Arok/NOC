@@ -14,7 +14,7 @@ const GetInvolved = () => {
         path="/get-involved"
       />
       {/* Hero Section */}
-      <section className="contact-hero get-involved-hero">
+      <section id="hero" className="contact-hero get-involved-hero">
         <div className="hero-container">
           <div className="hero-content">
             <AnimatedHeroText as="h1" text="Get Involved" startDelay={0.15} />
@@ -32,7 +32,7 @@ const GetInvolved = () => {
               <h2 className="section-title">There's a place for you in this story.</h2>
               <p className="problem-intro">Every child in our care is there because someone decided to act, a donor, a volunteer, a partner, a friend who told someone else. Some of what's below takes money, some takes time, and some just takes your voice. All of it matters.</p>
             </div>
-            <img className="get-involved-intro-photo" src="/images/child.jpeg" alt="A volunteer holding a child at Nile Orphan Care" loading="lazy" />
+            <img className="get-involved-intro-photo" src="/images/happyboy.jpg" alt="A smiling boy at Nile Orphan Care" loading="lazy" />
           </div>
         </div>
       </section>

@@ -549,8 +549,9 @@ html {
 }
 .footer-watermark {
   position: absolute;
-  right: -80px;
-  bottom: -80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 380px;
   height: 380px;
   object-fit: contain;
@@ -574,9 +575,12 @@ html {
 .footer-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer-logo-img {
   height: 42px;
@@ -666,7 +670,7 @@ html {
   border-radius: var(--radius-sm) 0 0 var(--radius-sm);
   background: var(--ink-800);
   color: var(--paper);
-  font-size: 0.9rem;
+  font-size: 16px;
   box-sizing: border-box;
 }
 .newsletter-input::placeholder {
@@ -708,6 +712,11 @@ html {
 .footer-bottom-dot {
   color: var(--gold);
   font-weight: 700;
+}
+.footer-credit {
+  margin-top: 0.35rem !important;
+  font-size: 0.78rem !important;
+  color: var(--footer-muted);
 }
 .footer-social-icons {
   display: flex;
@@ -922,6 +931,7 @@ html {
 .welcome-img-caption {
   position: absolute;
   left: 1.75rem;
+  right: 1.75rem;
   bottom: 1.5rem;
   color: var(--paper);
   font-size: 0.85rem;
@@ -2473,7 +2483,7 @@ html {
   padding-top: 0;
 }
 .about-hero {
-  background: url('../public/images/hero-1.jpeg') center 20%/cover;
+  background: url('../public/images/aboutus.jpg') center 25%/cover;
   min-height: 560px;
   display: flex;
   align-items: flex-end;
@@ -2706,6 +2716,37 @@ html {
   color: var(--muted);
   font-weight: 500;
   margin: 0;
+}
+.member-bio-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.member-bio-toggle:hover {
+  text-decoration: underline;
+}
+.member-bio {
+  margin-top: 12px;
+}
+.member-bio-subtitle {
+  font-weight: 600;
+  color: var(--ink) !important;
+  margin-bottom: 10px !important;
+}
+.member-bio p {
+  color: var(--ink-soft);
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.member-bio p:last-child {
+  margin-bottom: 0;
 }
 /* Fade-in animation for scroll effects */
 .animate-on-scroll {

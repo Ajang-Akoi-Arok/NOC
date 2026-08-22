@@ -22,21 +22,21 @@ const Home = () => {
 
   const newsArticles = [
     {
-      image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      image: '/images/inter-ethnic.jpg',
       alt: 'Classroom at a Nile Orphan Care education center in South Sudan',
       meta: 'Dec 15, 2024 • 5 min read',
       title: 'New Education Center Opens in Khartoum',
       description: "We're excited to announce the opening of our fifth education center, equipped with modern classrooms, a library, and computer lab to serve 200 additional children in the community."
     },
     {
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/aboutus.jpg',
       alt: 'Vocational training graduates celebrating their achievement',
       meta: 'Dec 10, 2024 • 3 min read',
       title: '45 Students Graduate from Vocational Program',
       description: 'Celebrating another successful graduation as 45 young adults complete their vocational training and prepare to enter the workforce with valuable skills.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/Health.jpeg',
       alt: 'Mobile health clinic providing medical care to children',
       meta: 'Dec 5, 2024 • 4 min read',
       title: 'Mobile Health Clinic Reaches Remote Areas',
@@ -185,7 +185,7 @@ const Home = () => {
         path="/"
       />
       {/* Hero Section */}
-      <section className="hero" style={{backgroundImage: `url(${heroImage})`}}>
+      <section id="hero" className="hero" style={{backgroundImage: `url(${heroImage})`}}>
         <div className="hero-container">
           <div className="hero-content">
             <AnimatedHeroText as="h1" text="Transforming Lives of Vulnerable Children in South Sudan" startDelay={0.35} />
@@ -209,9 +209,9 @@ const Home = () => {
 
             <div className="mission-image fade-in-right">
               <div className="stats-image">
-                <img src="/images/welcome-to-noc.jpeg" alt="Children waving and smiling at a Nile Orphan Care community program" className="welcome-img" loading="lazy" />
+                <img src="/images/haplids.jpg" alt="Children waving and smiling at a Nile Orphan Care community program" className="welcome-img" loading="lazy" />
                 <div className="welcome-img-overlay"></div>
-                <span className="welcome-img-caption">Community Program &middot; South Sudan</span>
+                <span className="welcome-img-caption">Hope Has a Home Here &middot; South Sudan</span>
               </div>
             </div>
           </div>
@@ -347,7 +347,7 @@ const Home = () => {
               <p>Free, unifying education where 64 of South Sudan's tribes learn side by side in the same classrooms.</p>
             </div>
             <div className="whatwedo-card">
-              <img className="whatwedo-photo" src="https://images.unsplash.com/photo-1602516818688-715dfc1b77d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
+              <img className="whatwedo-photo" src="/images/daalbaai.jpg" alt="Cultivated farmland representing the Daalbaai Agriculture program's fields" loading="lazy" />
               <h3>Daalbaai Agriculture</h3>
               <p>Sustainable farming that grows food independence and feeds directly into the meals we serve children.</p>
             </div>
@@ -421,7 +421,7 @@ const Home = () => {
           <div className="why-exist-content">
             <div className="why-exist-text fade-in-left">
               <h2 className="section-title">Why Nile Orphan Care Exists</h2>
-              <p>Across communities along the Nile, many children are left vulnerable due to poverty, conflict, disease, and displacement. Without intervention, these children face limited access to education, healthcare, and emotional support, putting their futures at risk.</p>
+              <p>Across communities in South Sudan, many children are left vulnerable due to poverty, conflict, disease, and displacement. Without intervention, these children face limited access to education, healthcare, and emotional support, putting their futures at risk.</p>
               <p>Nile Orphan Care was founded to break this cycle. We believe that every child deserves safety, education, and the chance to dream. Our mission is not just to care for children, but to empower them to thrive as independent, confident adults.</p>
               <Link to="/programs" className="why-exist-link">See our programs &rarr;</Link>
             </div>
